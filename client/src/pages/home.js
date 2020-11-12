@@ -22,7 +22,7 @@ import {
 } from 'mdbreact';
 import '../pages/home.css';
 
-class ClassicFormPage extends React.Component {
+class Home extends React.Component {
   state = {
     collapseID: ''
   };
@@ -50,7 +50,7 @@ class ClassicFormPage extends React.Component {
       />
     );
     return (
-      <div id='classicformpage'>
+      <div id='home'>
         <Router>
           <div>
             <MDBNavbar
@@ -58,11 +58,11 @@ class ClassicFormPage extends React.Component {
               expand='md'
               scrolling
               fixed='top'
-              style={{ marginTop: '65px' }}
+          
             >
               <MDBContainer>
                 <MDBNavbarBrand>
-                  <strong className='white-text'>WT</strong>
+                  <strong className='white-text'><MDBIcon fab icon="mandalorian" /></strong>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler
                   onClick={this.toggleCollapse('navbarCollapse')}
@@ -81,7 +81,7 @@ class ClassicFormPage extends React.Component {
                   </MDBNavbarNav>
                   <MDBNavbarNav right>
                     <MDBNavItem>
-                    <MDBBtn color='indigo'>Sign Up</MDBBtn>
+                    <MDBBtn color='green'>Login</MDBBtn>
                     </MDBNavItem>
                   </MDBNavbarNav>
                 </MDBCollapse>
@@ -104,7 +104,7 @@ class ClassicFormPage extends React.Component {
                 className='white-text text-center text-md-left col-md-6 mt-xl-5 mb-5'
               >
                 <h1 className='h1-responsive font-weight-bold'>
-                  WOD Tribe
+                  WOD Tribe <MDBIcon fab icon="mandalorian" />
                 </h1>
                 <hr className='hr-light' />
                 <h6 className='mb-4'>
@@ -143,7 +143,7 @@ class ClassicFormPage extends React.Component {
                         type='password'
                       />
                       <div className='text-center mt-4 black-text'>
-                        <MDBBtn color='indigo'>Sign Up</MDBBtn>
+                        <MDBBtn color='green'>Sign Up</MDBBtn>
                     
                       </div>
                     </MDBCardBody>
@@ -174,4 +174,4 @@ class ClassicFormPage extends React.Component {
   }
 }
 
-export default ClassicFormPage;
+export default Home;

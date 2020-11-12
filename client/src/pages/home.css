@@ -1,4 +1,4 @@
-#classicformpage .view {
+#home .view {
     background-image: url('https://desktopwallpaper.wiki/wp-content/uploads/data/2017/12/6/popular-gym-background-1920x111-WTG200513.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -6,7 +6,7 @@
     min-height: 100vh;
   }
   
-  #classicformpage .gradient {
+  #home .gradient {
     background: -webkit-linear-gradient(
       45deg,
       rgba(0, 0, 0, 0.7),
@@ -24,28 +24,28 @@
     );
   }
   
-  #classicformpage .card {
+  #home .card {
     background-color: rgba(39, 39, 41, 0.2);
   }
   
-  #classicformpage h6 {
+  #home h6 {
     line-height: 1.7;
   }
   
-  #classicformpage .navbar {
+  #home .navbar {
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
   }
   
-  #classicformpage .top-nav-collapse {
+  #home .top-nav-collapse {
     background: #000000 !important;
   }
   
   @media (max-width: 768px) {
-    #classicformpage .navbar:not(.top-nav-collapse) {
+    #home .navbar:not(.top-nav-collapse) {
       background: #000000 !important;
     }
   }
   
-  #classicformpage label {
+  #home label {
     color: #fff !important;
   }
