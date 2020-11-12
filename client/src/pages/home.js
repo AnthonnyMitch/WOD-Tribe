@@ -22,7 +22,7 @@ import {
 } from 'mdbreact';
 import '../pages/home.css';
 
-class ClassicFormPage extends React.Component {
+class Home extends React.Component {
   state = {
     collapseID: ''
   };
@@ -81,7 +81,7 @@ class ClassicFormPage extends React.Component {
                   </MDBNavbarNav>
                   <MDBNavbarNav right>
                     <MDBNavItem>
-                    <MDBBtn color='indigo'>Sign Up</MDBBtn>
+                    <MDBBtn color='indigo'>Login</MDBBtn>
                     </MDBNavItem>
                   </MDBNavbarNav>
                 </MDBCollapse>
@@ -174,4 +174,4 @@ class ClassicFormPage extends React.Component {
   }
 }
 
-export default ClassicFormPage;
+export default Home;
