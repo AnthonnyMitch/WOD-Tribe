@@ -2,13 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios'
 import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBNavbarToggler,
-  MDBCollapse,
+ 
   MDBMask,
   MDBRow,
   MDBCol,
@@ -23,7 +17,7 @@ import {
   MDBAnimation
 } from 'mdbreact';
 import './styles/sign-up.css';
-import { response } from 'express';
+
 
 class ClassicFormPage extends React.Component {
   state = {
@@ -54,80 +48,13 @@ class ClassicFormPage extends React.Component {
     })
   }
 
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ''
-    }));
-
-  componentDidMount() {
-    document.querySelector('nav').style.height = '65px';
-  }
-
-  componentWillUnmount() {
-    document.querySelector('nav').style.height = 'auto';
-  }
+  
 
   render() {
-    const { collapseID } = this.state;
-    const overlay = (
-      <div
-        id='sidenav-overlay'
-        style={{ backgroundColor: 'transparent' }}
-        onClick={this.toggleCollapse('navbarCollapse')}
-      />
-    );
+   
     return (
       <div id='classicformpage'>
-        <Router>
-          <div>
-            <MDBNavbar
-              dark
-              expand='md'
-              scrolling
-              fixed='top'
-              style={{ marginTop: '65px' }}
-            >
-              <MDBContainer>
-                <MDBNavbarBrand>
-                  <strong className='white-text'>MDB</strong>
-                </MDBNavbarBrand>
-                <MDBNavbarToggler
-                  onClick={this.toggleCollapse('navbarCollapse')}
-                />
-                <MDBCollapse id='navbarCollapse' isOpen={collapseID} navbar>
-                  <MDBNavbarNav left>
-                    <MDBNavItem active>
-                      <MDBNavLink to='#!'>Home</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to='#!'>Link</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to='#!'>Profile</MDBNavLink>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                  <MDBNavbarNav right>
-                    <MDBNavItem>
-                      <MDBFormInline waves>
-                        <div className='md-form my-0'>
-                          <input
-                            className='form-control mr-sm-2'
-                            type='text'
-                            placeholder='Search'
-                            aria-label='Search'
-                          />
-                        </div>
-                      </MDBFormInline>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                </MDBCollapse>
-              </MDBContainer>
-            </MDBNavbar>
-            {collapseID && overlay}
-          </div>
-        </Router>
-
-        <MDBView>
+       <MDBView>
           <MDBMask className='d-flex justify-content-center align-items-center gradient' />
           <MDBContainer
             style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
