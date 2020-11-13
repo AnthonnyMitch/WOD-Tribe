@@ -1,0 +1,13 @@
+#user .view {
+    background-image: url('https://desktopwallpaper.wiki/wp-content/uploads/data/2017/12/6/popular-gym-background-1920x111-WTG200513.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh !important;
+    height: unset !important;
+  }
+
+  section #progress{
+      background-color: #6666;
+  }
+
