@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   MDBMask,
   MDBRow,
-  MDBCol,
   MDBIcon,
   MDBBtn,
   MDBView,
@@ -56,7 +55,7 @@ class Login extends React.Component {
                         type='password'
                       />
                       <div className='text-center mt-4 black-text'>
-                        <MDBBtn color='green'>Login</MDBBtn>
+                        <MDBBtn color='green'><Link to="/userpage">Login</Link></MDBBtn>
                     
                       </div>
                     </MDBCardBody>
