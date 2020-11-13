@@ -81,7 +81,10 @@ class Home extends React.Component {
                   </MDBNavbarNav>
                   <MDBNavbarNav right>
                     <MDBNavItem>
+
                       <MDBBtn color='green'>Login</MDBBtn>
+
+                    <
                     </MDBNavItem>
                   </MDBNavbarNav>
                 </MDBCollapse>
