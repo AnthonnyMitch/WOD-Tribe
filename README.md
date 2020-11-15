@@ -1,29 +1,43 @@
-# Create React Express App
+# M.E.R.N. Authentication Boilerplate
+Full Stack Project starter with basic components routes and authentication. The project is in MVC format that includes the User model and controller. The first routes in the client are protected by the passport authentication using the local strategy. 
 
-## About This Boilerplate
+## Purpose and Inspiration
+You can fork and run this to quickly have an MVC project up and running, then simply add the controllers models and components that your project needs. I wanted to have a place to start with no other models than the User model. This is currently at the point where you can:
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+- Register a new user
+- Login with an existing user
+- Log Out
+*(You are not able to navigate to client side routes that are protected by authentication)*
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
+## MVC
+This project is structured in Full Stack Javascript with Mongoose Models REACT Views and Controllers. The heavy lifting for the authentication is done in src/utils/Auth.js.
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
 
-```
-npm install
-```
+## Tech Stack
++ [MONGOOSE ORM](https://www.npmjs.com/package/mongoose)
++ [EXPRESS](https://www.npmjs.com/package/express)
++ [REACT](https://reactjs.org/)
++ [NODE](https://nodejs.org/en/)
++ [PASSPORT](http://www.passportjs.org/docs/username-password/)
 
-This should install node modules within the server and the client folder.
+#### Install and run
+Install all the dependencies with Yarn or NPM
+`yarn install` <br>
+Make sure you start Mongod and have mongoDB running..
+`mongod` <br>
+Then start the project
+`yarn start
+## Basic Nav on Homepage
+![Register A New User](/client/public/images/home_shot.png)
 
-After both installations complete, run the following command in your terminal:
+## Register a New User
+![Register A New User](/client/public/images/register_shot.png)
 
-```
-npm start
-```
+## Login the new user
+![Register A New User](/client/public/images/login_shot.png)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## Routes are protected from Users that are not logged in
+![Login an existing User](/client/public/images/protected_shot.png)
 
-## Deployment (Heroku)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
