@@ -48,7 +48,7 @@ class Login extends React.Component {
                         type='password'
                       />
                       <div className='text-center mt-4 black-text'>
-                        <MDBBtn color='green'><Link to="/userpage">Login</Link></MDBBtn>
+                        <MDBBtn color='green'><Link to="/userpage">Login</Link></MDBBtn
                       </div>
                     </MDBCardBody>
                   </MDBCard>

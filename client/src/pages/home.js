@@ -22,7 +22,6 @@ import {
   MDBAnimation
 } from 'mdbreact';
 import '../pages/home.css';
-
 class Home extends React.Component {
   state = {
     collapseID: ''
@@ -71,7 +70,7 @@ class Home extends React.Component {
                 <MDBCollapse id='navbarCollapse' isOpen={collapseID} navbar>
                   <MDBNavbarNav left>
                     <MDBNavItem active>
-                      <MDBNavLink to='#!'>Home</MDBNavLink>
+                      <MDBNavLink to='/'>Home</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to='#!'>About</MDBNavLink>
@@ -85,150 +84,149 @@ class Home extends React.Component {
 
                       <MDBBtn color='green'><Link to="/login">Login</Link></MDBBtn>
 
-
                     </MDBNavItem>
                   </MDBNavbarNav>
                 </MDBCollapse>
               </MDBContainer>
             </MDBNavbar>
-            {collapseID && overlay}
+              {collapseID && overlay}
           </div>
         </Router>
 
-        <MDBView>
-          <MDBMask className='d-flex justify-content-center align-items-center gradient' />
-          <MDBContainer
-            style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
-            className='mt-5  d-flex justify-content-center align-items-center'
-          >
-            <MDBRow>
-              <MDBAnimation
-                type='fadeInLeft'
-                delay='.3s'
-                className='white-text text-center text-md-left col-md-6 mt-xl-5 mb-5'
-              >
-                <h1 className='h1-responsive font-weight-bold'>
-                  WOD Tribe <MDBIcon fab icon="mandalorian" />
-                </h1>
-                <hr className='hr-light' />
-                <h6 className='mb-4'>
-                  Aqui vamos a poner el mission estatement del app y cuando le den click al button learn more los van a moder a un nivel de la paginadonde les explicares como funciona cada herramienta.
+          <MDBView>
+            <MDBMask className='d-flex justify-content-center align-items-center gradient' />
+            <MDBContainer
+              style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
+              className='mt-5  d-flex justify-content-center align-items-center'
+            >
+              <MDBRow>
+                <MDBAnimation
+                  type='fadeInLeft'
+                  delay='.3s'
+                  className='white-text text-center text-md-left col-md-6 mt-xl-5 mb-5'
+                >
+                  <h1 className='h1-responsive font-weight-bold'>
+                    WOD Tribe <MDBIcon fab icon="mandalorian" />
+                  </h1>
+                  <hr className='hr-light' />
+                  <h6 className='mb-4'>
+                    Aqui vamos a poner el mission estatement del app y cuando le den click al button learn more los van a moder a un nivel de la paginadonde les explicares como funciona cada herramienta.
                 </h6>
-                <MDBBtn outline color='white'>
-                  Learn More
+                  <MDBBtn outline color='white'>
+                    Learn More
                 </MDBBtn>
-              </MDBAnimation>
-
-              <MDBCol md='6' xl='5' className='mb-4'>
-                <MDBAnimation type='fadeInRight' delay='.3s'>
-                  <MDBCard id='classic-card'>
-                    <MDBCardBody className='white-text'>
-                      <h3 className='text-center'>
-                        <MDBIcon icon='user' /> Register:
-                      </h3>
-                      <hr className='hr-light' />
-                      <MDBInput
-                        className='white-text'
-                        iconClass='white-text'
-                        label='Your name'
-                        icon='user'
-                      />
-                      <MDBInput
-                        className='white-text'
-                        iconClass='white-text'
-                        label='Your email'
-                        icon='envelope'
-                      />
-                      <MDBInput
-                        className='white-text'
-                        iconClass='white-text'
-                        label='Your password'
-                        icon='lock'
-                        type='password'
-                      />
-                      <div className='text-center mt-4 black-text'>
-                        <MDBBtn color='green'>Sign Up</MDBBtn>
-
-                      </div>
-                    </MDBCardBody>
-                  </MDBCard>
                 </MDBAnimation>
+
+                <MDBCol md='6' xl='5' className='mb-4'>
+                  <MDBAnimation type='fadeInRight' delay='.3s'>
+                    <MDBCard id='classic-card'>
+                      <MDBCardBody className='white-text'>
+                        <h3 className='text-center'>
+                          <MDBIcon icon='user' /> Register:
+                      </h3>
+                        <hr className='hr-light' />
+                        <MDBInput
+                          className='white-text'
+                          iconClass='white-text'
+                          label='Your name'
+                          icon='user'
+                        />
+                        <MDBInput
+                          className='white-text'
+                          iconClass='white-text'
+                          label='Your email'
+                          icon='envelope'
+                        />
+                        <MDBInput
+                          className='white-text'
+                          iconClass='white-text'
+                          label='Your password'
+                          icon='lock'
+                          type='password'
+                        />
+                        <div className='text-center mt-4 black-text'>
+                          <MDBBtn color='green'>Sign Up</MDBBtn>
+
+                        </div>
+                      </MDBCardBody>
+                    </MDBCard>
+                  </MDBAnimation>
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
+          </MDBView>
+
+          <MDBContainer id='mission'>
+            <MDBRow className='py-5'>
+              <MDBCol md='12' className='white-text text-center'>
+                <h3>
+                  <MDBIcon icon="quote-left" />          AQUI VAMOS A PONER UNA FRASE O UN LEMA PRA LA MARCA, O PODEMOS HACER COMO UN PEQUENO MISSION STATEMENT.                 <MDBIcon icon="quote-right" />
+                </h3>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
-        </MDBView>
-
-        <MDBContainer id='mission'>
-          <MDBRow className='py-5'>
-            <MDBCol md='12' className='white-text text-center'>
-              <h3>
-                <MDBIcon icon="quote-left" />          AQUI VAMOS A PONER UNA FRASE O UN LEMA PRA LA MARCA, O PODEMOS HACER COMO UN PEQUENO MISSION STATEMENT.                 <MDBIcon icon="quote-right" />
-              </h3>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
 
 
-        <section className="my-5" id='tools'>
-          <h1 className="h1-responsive font-weight-bold text-center my-5">
-            <strong>Explore The Tribe</strong>
-          </h1>
-          <h4 className="white-text w-responsive text-center mx-auto mb-5">
-            Aqui se va a explicar que WOD tribe no es solo para ver los ejercicios si no que pueden hacer otras cosas.
+          <section className="my-5" id='tools'>
+            <h1 className="h1-responsive font-weight-bold text-center my-5">
+              <strong>Explore The Tribe</strong>
+            </h1>
+            <h4 className="white-text w-responsive text-center mx-auto mb-5">
+              Aqui se va a explicar que WOD tribe no es solo para ver los ejercicios si no que pueden hacer otras cosas.
         </h4>
 
-          <MDBRow>
-            <MDBCol lg="5" className="mb-lg-0 mb-5">
-              <img
-                src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg"
-                alt=""
-                className="img-fluid rounded z-depth-1"
-              />
-            </MDBCol>
-            <MDBCol lg="7">
-              <h3 >  <MDBIcon icon="dumbbell" />         Check your progress</h3>
-              <h4>
-                Aqui se hablara acerca de los WOD y como pueden ver sus resultados y lo que han mejorado
+            <MDBRow>
+              <MDBCol lg="5" className="mb-lg-0 mb-5">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg"
+                  alt=""
+                  className="img-fluid rounded z-depth-1"
+                />
+              </MDBCol>
+              <MDBCol lg="7">
+                <h3 >  <MDBIcon icon="dumbbell" />         Check your progress</h3>
+                <h4>
+                  Aqui se hablara acerca de los WOD y como pueden ver sus resultados y lo que han mejorado
            </h4>
-            </MDBCol>
-          </MDBRow>
-          <hr className="my-5" />
-          <MDBRow>
-            <MDBCol lg="7">
-              <h3>  <MDBIcon icon="utensils" />        Track your calories</h3>
-              <h4>
-                Aqui se hablara acerca de calorie ytacker y como funciona
+              </MDBCol>
+            </MDBRow>
+            <hr className="my-5" />
+            <MDBRow>
+              <MDBCol lg="7">
+                <h3>  <MDBIcon icon="utensils" />        Track your calories</h3>
+                <h4>
+                  Aqui se hablara acerca de calorie ytacker y como funciona
            </h4>
 
-            </MDBCol>
-            <MDBCol lg="5">
-              <img
-                src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
-                alt=""
-                className="img-fluid rounded z-depth-1"
-              />
-            </MDBCol>
-          </MDBRow>
-          <hr className="my-5" />
-          <MDBRow>
-            <MDBCol lg="5" className="mb-lg-0 mb-5">
-              <img
-                src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg"
-                alt=""
-                className="img-fluid rounded z-depth-1"
-              />
-            </MDBCol>
-            <MDBCol lg="7">
-              <h3>  <MDBIcon icon="calculator" />          Fitness Calculator</h3>
-              <h4>
-                Aqui se hablara caerca de como puedes usar la calculadora para ver BMI y toda esta paja
+              </MDBCol>
+              <MDBCol lg="5">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
+                  alt=""
+                  className="img-fluid rounded z-depth-1"
+                />
+              </MDBCol>
+            </MDBRow>
+            <hr className="my-5" />
+            <MDBRow>
+              <MDBCol lg="5" className="mb-lg-0 mb-5">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg"
+                  alt=""
+                  className="img-fluid rounded z-depth-1"
+                />
+              </MDBCol>
+              <MDBCol lg="7">
+                <h3>  <MDBIcon icon="calculator" />          Fitness Calculator</h3>
+                <h4>
+                  Aqui se hablara caerca de como puedes usar la calculadora para ver BMI y toda esta paja
            </h4>
-            </MDBCol>
-          </MDBRow>
-          <hr className="my-5" />
-        </section>
+              </MDBCol>
+            </MDBRow>
+            <hr className="my-5" />
+          </section>
 
-        {/* <div>
+
           <MDBCard className="my-5 px-1 pb-5 text-center">
             <MDBCardBody>
               <h2 className="h1-responsive font-weight-bold my-5">
@@ -297,6 +295,7 @@ class Home extends React.Component {
               </MDBRow>
             </MDBCardBody>
           </MDBCard>
+
         </div>
         <section className="my-5">
           <h2 className="h1-responsive font-weight-bold text-center my-5 white-text">
@@ -508,7 +507,7 @@ class Home extends React.Component {
           </MDBCol>
         </MDBRow>
       </MDBCard>
-    </section> */}
+    </section> */>
       </div>
     );
   }

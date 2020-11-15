@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Home from "./pages/home"
 import Login from './pages/login'
 import Userpage from './pages/userpage';
@@ -94,7 +95,9 @@ axios.request(options).then(function (response) {
 	console.log(response.data);
 }).catch(function (error) {
 	console.error(error);
-});
+
+
+
 
 class App extends Component {
   render() {
@@ -102,9 +105,12 @@ class App extends Component {
     <BrowserRouter>
     <div> 
         <Switch>
+
          <Route exact path="/" component={Home}/>
          <Route path="/login" component={Login}/>
          <Route path="/userpage" component={Userpage}/>
+
+
        </Switch>
     </div> 
   </BrowserRouter>
