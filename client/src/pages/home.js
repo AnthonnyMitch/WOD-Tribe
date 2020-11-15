@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -82,9 +83,9 @@ class Home extends React.Component {
                   <MDBNavbarNav right>
                     <MDBNavItem>
 
-                      <MDBBtn color='green'>Login</MDBBtn>
+                      <MDBBtn color='green'><Link to="/login">Login</Link></MDBBtn>
 
-                    <
+
                     </MDBNavItem>
                   </MDBNavbarNav>
                 </MDBCollapse>
@@ -227,175 +228,287 @@ class Home extends React.Component {
           <hr className="my-5" />
         </section>
 
-        <MDBCard className="my-5 px-1 pb-5 text-center">
-          <MDBCardBody>
-            <h2 className="h1-responsive font-weight-bold my-5">
-              Our amazing team
-          </h2>
-            <p className="white-text w-responsive mx-auto mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-              error amet numquam iure provident voluptate esse quasi, veritatis
-              totam voluptas nostrum quisquam eum porro a pariatur veniam.
-          </p>
-            <MDBRow>
-              <MDBCol md="6" className="mb-md-0 mb-5">
-                <img
-                  tag="img"
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
-                  className="rounded-circle z-depth-1 img-fluid"
-                  alt="Sample avatar"
-                />
-                <h4 className="font-weight-bold white-text my-4">
-                  Anthonny Rodriguez 
-              </h4>
-                <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
-                <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
-                  <MDBIcon fab icon="facebook-f" />
-                </MDBBtn>
-                <MDBBtn
-                  tag="a"
-                  floating
-                  size="sm"
-                  className="mx-1 mb-0 btn-green"
-                >
-                  <MDBIcon fab icon="github" />
-                </MDBBtn>
-                <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
-                  <MDBIcon fab icon="twitter" />
-                </MDBBtn>
-              </MDBCol>
-
-
-              <MDBCol md="4" className="mb-md-0 mb-5">
-                <img
-                  tag="img"
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
-                  className="rounded-circle z-depth-1 img-fluid"
-                  alt="Sample avatar"
-                />
-                <h4 className="font-weight-bold white-text my-4">
-                  Andrew Rodriguez 
-              </h4>
-              <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
-                <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
-                  <MDBIcon fab icon="facebook-f" />
-                </MDBBtn>
-                <MDBBtn
-                  tag="a"
-                  floating
-                  size="sm"
-                  className="mx-1 mb-0 btn-green"
-                >
-                  <MDBIcon fab icon="github" />
-                </MDBBtn>
-                <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
-                  <MDBIcon fab icon="twitter" />
-                </MDBBtn>
-              </MDBCol>
-            </MDBRow>
-          </MDBCardBody>
-        </MDBCard>
-        <section className="my-5">
-      <h2 className="h1-responsive font-weight-bold text-center my-5 white-text">
-        Contact us
-      </h2>
-    
-      <MDBRow>
-        <MDBCol lg="5" className="lg-0 mb-4">
-          <MDBCard>
+        {/* <div>
+          <MDBCard className="my-5 px-1 pb-5 text-center">
             <MDBCardBody>
-              <div>
-                <h3 className="mt-2">
-                  <MDBIcon icon="envelope" /> Write to us:
-                </h3>
-              </div>
-              <p className="white-text">
-                We'll write rarely, but only the best content.
-              </p>
-              <div className="md-form">
-                <MDBInput
-                  icon="user"
-                  label="Your name"
-                  iconClass="white-text"
-                  type="text"
-                  id="form-name"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="envelope"
-                  label="Your email"
-                  iconClass="white-text"
-                  type="text"
-                  id="form-email"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="tag"
-                  label="Subject"
-                  iconClass="white-text"
-                  type="text"
-                  id="form-subject"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="pencil-alt"
-                  label="Icon Prefix"
-                  iconClass="white-text"
-                  type="textarea"
-                  id="form-text"
-                />
-              </div>
-              <div className="text-center">
-                <MDBBtn color="green">Submit</MDBBtn>
-              </div>
+              <h2 className="h1-responsive font-weight-bold my-5">
+                Our amazing team
+          </h2>
+              <p className="white-text w-responsive mx-auto mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+                error amet numquam iure provident voluptate esse quasi, veritatis
+                totam voluptas nostrum quisquam eum porro a pariatur veniam.
+          </p>
+              <MDBRow>
+                <MDBCol md="6" className="mb-md-0 mb-5">
+                  <img
+                    tag="img"
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+                    className="rounded-circle z-depth-1 img-fluid"
+                    alt="Sample avatar"
+                  />
+                  <h4 className="font-weight-bold white-text my-4">
+                    Anthonny Rodriguez
+              </h4>
+                  <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
+                  <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
+                    <MDBIcon fab icon="facebook-f" />
+                  </MDBBtn>
+                  <MDBBtn
+                    tag="a"
+                    floating
+                    size="sm"
+                    className="mx-1 mb-0 btn-green"
+                  >
+                    <MDBIcon fab icon="github" />
+                  </MDBBtn>
+                  <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
+                    <MDBIcon fab icon="twitter" />
+                  </MDBBtn>
+                </MDBCol>
+
+
+                <MDBCol md="4" className="mb-md-0 mb-5">
+                  <img
+                    tag="img"
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+                    className="rounded-circle z-depth-1 img-fluid"
+                    alt="Sample avatar"
+                  />
+                  <h4 className="font-weight-bold white-text my-4">
+                    Andrew Rodriguez
+              </h4>
+                  <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
+                  <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
+                    <MDBIcon fab icon="facebook-f" />
+                  </MDBBtn>
+                  <MDBBtn
+                    tag="a"
+                    floating
+                    size="sm"
+                    className="mx-1 mb-0 btn-green"
+                  >
+                    <MDBIcon fab icon="github" />
+                  </MDBBtn>
+                  <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green">
+                    <MDBIcon fab icon="twitter" />
+                  </MDBBtn>
+                </MDBCol>
+              </MDBRow>
             </MDBCardBody>
           </MDBCard>
-        </MDBCol>
-        <MDBCol lg="7">
-          <div
-            id="map-container"
-            className="rounded z-depth-1-half map-container"
-            style={{ height: "400px" }}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
-              title="This is a unique title"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style={{ border: 0 }}
-            />
-          </div>
-          <br />
-          <MDBRow className="text-center white-text">
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="green" className="accent-1">
-                <MDBIcon icon="map-marker-alt" />
-              </MDBBtn>
-              <p>New York, 94126</p>
-              <p className="mb-md-0">United States</p>
+        </div>
+        <section className="my-5">
+          <h2 className="h1-responsive font-weight-bold text-center my-5 white-text">
+            Contact us
+      </h2>
+
+          <MDBRow>
+            <MDBCol lg="5" className="lg-0 mb-4">
+              <MDBCard>
+                <MDBCardBody>
+                  <div>
+                    <h3 className="mt-2">
+                      <MDBIcon icon="envelope" /> Write to us:
+                </h3>
+                  </div>
+                  <p className="white-text">
+                    We'll write rarely, but only the best content.
+              </p>
+                  <div className="md-form">
+                    <MDBInput
+                      icon="user"
+                      label="Your name"
+                      iconClass="white-text"
+                      type="text"
+                      id="form-name"
+                    />
+                  </div>
+                  <div className="md-form">
+                    <MDBInput
+                      icon="envelope"
+                      label="Your email"
+                      iconClass="white-text"
+                      type="text"
+                      id="form-email"
+                    />
+                  </div>
+                  <div className="md-form">
+                    <MDBInput
+                      icon="tag"
+                      label="Subject"
+                      iconClass="white-text"
+                      type="text"
+                      id="form-subject"
+                    />
+                  </div>
+                  <div className="md-form">
+                    <MDBInput
+                      icon="pencil-alt"
+                      label="Icon Prefix"
+                      iconClass="white-text"
+                      type="textarea"
+                      id="form-text"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <MDBBtn color="green">Submit</MDBBtn>
+                  </div>
+                </MDBCardBody>
+              </MDBCard>
             </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="green" className="accent-1">
-                <MDBIcon icon="phone" />
-              </MDBBtn>
-              <p>+ 01 234 567 89</p>
-              <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
-            </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="green" className="accent-1">
-                <MDBIcon icon="envelope" />
-              </MDBBtn>
-              <p>info@gmail.com</p>
-              <p className="mb-md-0">sale@gmail.com</p>
+            <MDBCol lg="7">
+              <div
+                id="map-container"
+                className="rounded z-depth-1-half map-container"
+                style={{ height: "400px" }}
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
+                  title="This is a unique title"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  style={{ border: 0 }}
+                />
+              </div>
+              <br />
+              <MDBRow className="text-center white-text">
+                <MDBCol md="4">
+                  <MDBBtn tag="a" floating color="green" className="accent-1">
+                    <MDBIcon icon="map-marker-alt" />
+                  </MDBBtn>
+                  <p>New York, 94126</p>
+                  <p className="mb-md-0">United States</p>
+                </MDBCol>
+                <MDBCol md="4">
+                  <MDBBtn tag="a" floating color="green" className="accent-1">
+                    <MDBIcon icon="phone" />
+                  </MDBBtn>
+                  <p>+ 01 234 567 89</p>
+                  <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
+                </MDBCol>
+                <MDBCol md="4">
+                  <MDBBtn tag="a" floating color="green" className="accent-1">
+                    <MDBIcon icon="envelope" />
+                  </MDBBtn>
+                  <p>info@gmail.com</p>
+                  <p className="mb-md-0">sale@gmail.com</p>
+                </MDBCol>
+              </MDBRow>
             </MDBCol>
           </MDBRow>
-        </MDBCol>
-      </MDBRow>
-    </section>
+        </section> */}
+      {/* <section className="contact-section my-5">
+      <MDBCard>
+        <MDBRow>
+          <MDBCol lg="8">
+            <MDBCardBody className="form">
+              <h3 className="mt-4">
+                <MDBIcon icon="envelope" className="pr-2" />
+                Write to us:
+              </h3>
+              <MDBRow>
+                <MDBCol md="6">
+                  <div className="md-form mb-0">
+                    <MDBInput
+                      type="text"
+                      id="form-contact-name"
+                      label="Your name"
+                    />
+                  </div>
+                </MDBCol>
+                <MDBCol md="6">
+                  <div className="md-form mb-0">
+                    <MDBInput
+                      type="text"
+                      id="form-contact-email"
+                      label="Your email"
+                    />
+                  </div>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow>
+                <MDBCol md="6">
+                  <div className="md-form mb-0">
+                    <MDBInput
+                      type="text"
+                      id="form-contact-phone"
+                      label="Your phone"
+                    />
+                  </div>
+                </MDBCol>
+                <MDBCol md="6">
+                  <div className="md-form mb-0">
+                    <MDBInput
+                      type="text"
+                      id="form-contact-company"
+                      label="Your company"
+                    />
+                  </div>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow>
+                <MDBCol md="12">
+                  <div className="md-form mb-0">
+                    <MDBInput
+                      type="textarea"
+                      id="form-contact-message"
+                      label="Your message"
+                    />
+                    <MDBBtn rounded color="blue">
+                      <MDBIcon icon="paper-plane" />
+                    </MDBBtn>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </MDBCardBody>
+          </MDBCol>
+          <MDBCol lg="4">
+            <MDBCardBody className="contact text-center h-100 white-text">
+              <h3 className="my-4 pb-2">Contact information</h3>
+              <ul className="text-lg-left list-unstyled ml-4">
+                <li>
+                  <p>
+                    <MDBIcon icon="map-marker-alt" className="pr-2" />
+                    New York, 94126 USA
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <MDBIcon icon="phone" className="pr-2" />+ 01 234 567 89
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <MDBIcon icon="envelope" className="pr-2" />
+                    contact@example.com
+                  </p>
+                </li>
+              </ul>
+              <hr className="hr-light my-4" />
+              <ul className="list-inline text-center list-unstyled">
+                <li className="list-inline-item">
+                  <a href="#!" className="p-2 fa-lg w-ic">
+                    <MDBIcon fab icon="twitter" />
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#!" className="p-2 fa-lg w-ic">
+                    <MDBIcon fab icon="linkedin-in" />
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#!" className="p-2 fa-lg w-ic">
+                    <MDBIcon fab icon="instagram" />
+                  </a>
+                </li>
+              </ul>
+            </MDBCardBody>
+          </MDBCol>
+        </MDBRow>
+      </MDBCard>
+    </section> */}
       </div>
     );
   }

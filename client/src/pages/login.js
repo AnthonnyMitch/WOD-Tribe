@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   MDBMask,
   MDBRow,
-  MDBCol,
   MDBIcon,
   MDBBtn,
   MDBView,
@@ -14,12 +13,8 @@ import {
   MDBAnimation
 } from 'mdbreact';
 import '../pages/login.css';
-
 class Login extends React.Component {
-  
-
   render() {
-   
     return (
       <div id='classicformpage'>
         <MDBView>
@@ -29,13 +24,10 @@ class Login extends React.Component {
             className='mt-5  d-flex justify-content-center align-items-center'
           >
             <MDBRow>
-           
                 <MDBAnimation type='fadeInRight' delay='.3s'>
                   <MDBCard id='classic-card' className="card">
                     <MDBCardBody className='white-text'>
                         <h1 className='text-center'>
-                       
-
                             WOD Tribe
                         </h1>
                       <h3 className='text-center'>
@@ -56,13 +48,11 @@ class Login extends React.Component {
                         type='password'
                       />
                       <div className='text-center mt-4 black-text'>
-                        <MDBBtn color='green'>Login</MDBBtn>
-                    
+                        <MDBBtn color='green'><Link to="/userpage">Login</Link></MDBBtn>
                       </div>
                     </MDBCardBody>
                   </MDBCard>
                 </MDBAnimation>
-             
             </MDBRow>
           </MDBContainer>
         </MDBView>
@@ -70,5 +60,4 @@ class Login extends React.Component {
     );
   }
 }
-
 export default Login;

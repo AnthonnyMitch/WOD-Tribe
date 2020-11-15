@@ -15,7 +15,7 @@ import {
     MDBView,
     MDBIcon,
     MDBContainer,
-    MDBBtn
+    MDBBtn,
 
 } from 'mdbreact';
 
@@ -195,46 +195,48 @@ class User extends React.Component {
                                         <label htmlFor="defaultFormRegisterNameEx" className="black-text">
                                             Age
         </label>
-                                        <input type="number" id="defaultFormRegisterNameEx" className="form-control" />
+                                        <input type="number" id="ageInput" className="form-control" />
                                         <br />
-                                        <label htmlFor="defaultFormRegisterEmailEx" className="black-text">
+                                        <label htmlFor="sexInput" className="black-text">
                                             Sex
         </label>
-                                        <input type="text" id="defaultFormRegisterEmailEx" className="form-control" />
+                                        <input type="text" id="weightInput" className="form-control" />
+                                       
+
                                         <br />
                                         <label htmlFor="defaultFormRegisterConfirmEx" className="black-text">
                                             Weight
         </label>
                                         <input type="number" id="defaultFormRegisterConfirmEx" className="form-control" />
                                         <br />
-                                        <label htmlFor="defaultFormRegisterPasswordEx" className="black-text">
+                                        <label htmlFor="heightInput" className="black-text">
                                             Height
         </label>
                                         <input type="number" id="defaultFormRegisterPasswordEx" className="form-control" />
                                         <div className="text-center mt-4">
-                                            <MDBBtn color="unique" type="submit">
+                                            <MDBBtn color="unique" type="submit" id="calculate">
                                                 Calculate
           </MDBBtn>
                                         </div>
                                     </form></MDBCol>
                                     <MDBCol md="6"><form>
                                         <p className="h4 text-center mb-4">Results</p>
-                                        <label htmlFor="defaultFormRegisterNameEx" className="black-text">
+                                        <label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
                                             BMI
         </label>
                                         <input type="text" name="BMI" className="form-control" />
                                         <br />
-                                        <label htmlFor="defaultFormRegisterEmailEx" className="black-text">
+                                        <label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
                                             Body Fat
         </label>
                                         <input type="text" id="defaultFormRegisterEmailEx" className="form-control" />
                                         <br />
-                                        <label htmlFor="defaultFormRegisterConfirmEx" className="black-text">
+                                        <label htmlFor="defaultFormRegisterConfirmEx" className="black-text" id="idealWeightResult">
                                             Ideal Weight
         </label>
                                         <input type="text" id="defaultFormRegisterConfirmEx" className="form-control" />
                                         <br />
-                                        <label htmlFor="defaultFormRegisterPasswordEx" className="black-text">
+                                        <label htmlFor="defaultFormRegisterPasswordEx" className="black-text" id="dailyCaloriesResult">
                                             Daily Calories
         </label>
                                         <input type="text" id="defaultFormRegisterPasswordEx" className="form-control" />
