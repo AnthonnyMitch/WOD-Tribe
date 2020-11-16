@@ -113,7 +113,7 @@ function ProtectedRoute() {
         </label>
                                         <input type="number" id="ageInput" className="form-control" />
                                         <br />
-                                        <label htmlFor="sexInput" className="black-text">
+                                        <label htmlFor="sexInput" className="black-text" id="sexInput">
                                             Sex
         </label>
                                         <input type="text" id="weightInput" className="form-control" />
