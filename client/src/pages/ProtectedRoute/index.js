@@ -61,7 +61,7 @@ function ProtectedRoute() {
 						<MDBRow>
 							<MDBCol md='12' className='mb-4 white-text text-center'>
 								<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 '>
-									Welcome User
+									 {user.username ? <span className="userText text-white ml-3 pt-1" to="#">Welcome  {user.username} !</span> : ""}
                 </h1>
 								<hr className='hr-light my-4' />
 								<img
@@ -136,6 +136,7 @@ function ProtectedRoute() {
                                     <MDBCol md="6"><form>
                                         <p className="h4 text-center mb-4">Results</p>
                                         <label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
+											BMI
         </label>
                                         <input type="text" name="BMI" className="form-control" />
                                         <br />
