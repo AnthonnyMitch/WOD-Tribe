@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import {MDBIcon} from 'mdbreact';
 // import Login from "../LoginForm";
 import AuthButton from "../AuthButton";
 import { UserContext } from "../../utils/UserContext";
@@ -37,19 +38,20 @@ function Nav() {
   }, [])
 
 
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
       <Link className="navbar-brand" to="/">
-        Auth Plate
+      <MDBIcon fab icon="mandalorian" /> WOD Tribe 
         </Link>
       <div className={`${open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
        
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
-            <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link>
-            <Link style={buttonStyle} className="btn btn-danger" to="/protected">Protected Page</Link>
+            <Link style={buttonStyle} className=" btn btn-dark" to="/public">Home Page</Link>
+            <Link style={buttonStyle} className="btn btn-dark" to="/protected">User Page </Link>
             {user.username ? "" :
-              <Link style={buttonStyle} className="btn btn-warning" to="/register">Register a New User</Link>
+              <Link style={buttonStyle} className="btn btn-dark" to="/register">Register</Link>
             }
             <AuthButton />
           </li>
