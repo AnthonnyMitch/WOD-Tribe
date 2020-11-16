@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import {MDBIcon} from 'mdbreact';
-// import Login from "../LoginForm";
 import AuthButton from "../AuthButton";
 import { UserContext } from "../../utils/UserContext";
 //I want to add some basic inline styling here, even though we are bringing in styles
@@ -40,7 +39,7 @@ function Nav() {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2 fixed-top">
       <Link className="navbar-brand" to="/">
       <MDBIcon fab icon="mandalorian" /> WOD Tribe 
         </Link>

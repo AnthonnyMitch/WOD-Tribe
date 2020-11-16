@@ -98,7 +98,7 @@ const bmi = {
 const AuthExample = () => (
 	<UserProvider>
 		<Router>
-			<div>
+			
 				<Nav className="App-header" />
 				
 					<Switch>
@@ -109,7 +109,7 @@ const AuthExample = () => (
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
 				
-			</div>
+			
 		</Router>
 	</UserProvider>
 )
