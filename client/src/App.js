@@ -9,7 +9,7 @@ import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { Container } from "./components/Grid";
+
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import './App.css';
@@ -100,7 +100,7 @@ const AuthExample = () => (
 		<Router>
 			<div>
 				<Nav className="App-header" />
-				<Container>
+				
 					<Switch>
 						<Route path="/public" component={PublicRoute} />
 						<Route path="/login" component={Login} />
@@ -108,7 +108,7 @@ const AuthExample = () => (
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
-				</Container>
+				
 			</div>
 		</Router>
 	</UserProvider>

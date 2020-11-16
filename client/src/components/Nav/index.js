@@ -43,7 +43,7 @@ function Nav() {
         Auth Plate
         </Link>
       <div className={`${open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
-        {user.username ? <span className="userText text-white ml-3 pt-1" to="#">Hi {user.username} !</span> : ""}
+       
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link>

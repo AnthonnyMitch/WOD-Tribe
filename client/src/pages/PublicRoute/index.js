@@ -16,7 +16,7 @@ function PublicRoute() {
 
     return (
         <div id='home'>
-             <MDBView src='https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg'>
+             <MDBView src='https://desktopwallpaper.wiki/wp-content/uploads/data/2017/12/6/popular-gym-background-1920x111-WTG200513.jpg'>
           <MDBMask className='rgba-black-light' />
           <MDBContainer
             className='d-flex justify-content-center align-items-center'
@@ -24,18 +24,21 @@ function PublicRoute() {
           >
             <MDBRow>
               <MDBCol md='12' className='mb-4 white-text text-center'>
-                <h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 '>
-                  Minimalist intro
+                <h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 '><MDBIcon fab icon="mandalorian" />
+                  WOD Tribe
                 </h1>
                 <hr className='hr-light my-4' />
                 <h5 className='text-uppercase mb-4 white-text '>
-                  <strong>Photography & design</strong>
+                  <strong></strong>
                 </h5>
                 <MDBBtn outline color='white'>
-                  portfolio
+                  The Tribe
                 </MDBBtn>
                 <MDBBtn outline color='white'>
-                  About me
+                  Team
+                </MDBBtn>
+                <MDBBtn outline color='white'>
+                Contact us
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
