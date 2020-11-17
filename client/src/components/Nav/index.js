@@ -52,7 +52,7 @@ function Nav() {
         <div className={`${open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
 
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item ">
+            <li className="nav-item " onClick={toggleNav}>
               <Link style={buttonStyle} className=" btn btn-dark" to="/public">Home Page</Link>
               <Link style={buttonStyle} className="btn btn-dark" to="/protected">User Page </Link>
               {user.username ? "" :

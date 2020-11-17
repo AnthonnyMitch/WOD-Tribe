@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 
 import {
 	MDBMask,
-	MDBRow,
+	
 	MDBIcon,
 
 	MDBView,
@@ -12,7 +12,7 @@ import {
 
 	MDBAnimation
 } from 'mdbreact';
-import Card from '../Card/index'
+
 import '../LoginForm/login.css';
 
 
@@ -30,7 +30,7 @@ function LoginForm({ onLogin }) {
 					style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
 					className='mt-5  d-flex justify-content-center align-items-center'
 				>
-					<MDBRow>
+				
 
 						<MDBAnimation type='fadeInRight' delay='.3s'>
 							<MDBCard id='classic-card' className="card">
@@ -44,7 +44,7 @@ function LoginForm({ onLogin }) {
 										<MDBIcon fab icon="mandalorian" />Login:
 						</h3>
 									<hr className='hr-light' />
-									<Card title="Login with your Username and Password">
+									
 										<form
 											ref={formRef}
 											onSubmit={(e) => {
@@ -63,12 +63,11 @@ function LoginForm({ onLogin }) {
 						</button>
 											</div>
 										</form>
-									</Card>
+									
 								</MDBCardBody>
 							</MDBCard>
 						</MDBAnimation>
 
-					</MDBRow>
 				</MDBContainer>
 			</MDBView>
 		</div>
