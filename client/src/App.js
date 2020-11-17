@@ -9,112 +9,125 @@ import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Register from "./components/Register";
-
+// import Admin  from "./components/Admin/Admin";
+// import  AddWorkout  from "./components/Admin/AddWorkout";
+// import  EditWorkout  from "./components/Admin/EditWorkout";
+// import GlobalProvider  from "./context/GlobalState";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import './App.css';
+
 import { UserProvider } from "./utils/UserContext"
 import axios from 'axios'
 
 const bmi = {
 	method: 'GET',
-	url: 'https://fitness-calculator.p.rapidapi.com/bmi', 
-	params: {age: '25', height: '180', weight: '65'},
+	url: 'https://fitness-calculator.p.rapidapi.com/bmi',
+	params: { age: '25', height: '180', weight: '65' },
 	headers: {
-	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-	  'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+		'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+		'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
 	}
-  };
-  axios.request(bmi).then(function (response) {
-	  console.log(response.data);
-  }).catch(function (error) {
-	  console.error(error);
-  });
-  const idealWeight = {
+};
+axios.request(bmi).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+const idealWeight = {
 	method: 'GET',
 	url: 'https://fitness-calculator.p.rapidapi.com/idealweight',
-	params: {weight: '70', gender: 'male', height: '178'},
+	params: { weight: '70', gender: 'male', height: '178' },
 	headers: {
-	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-	  'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+		'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+		'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
 	}
-  };
-  axios.request(idealWeight).then(function (response) {
-	  console.log(response.data);
-  }).catch(function (error) {
-	  console.error(error);
-  });
-  const bodyFat = {
+};
+axios.request(idealWeight).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+const bodyFat = {
 	method: 'GET',
 	url: 'https://fitness-calculator.p.rapidapi.com/bodyfat',
 	params: {
-	  waist: '96',
-	  gender: 'male',
-	  neck: '50',
-	  heigth: '178',
-	  hip: '92',
-	  age: '25',
-	  weigth: '70'
+		waist: '96',
+		gender: 'male',
+		neck: '50',
+		heigth: '178',
+		hip: '92',
+		age: '25',
+		weigth: '70'
 	},
 	headers: {
-	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-	  'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+		'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+		'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
 	}
-  };
-  axios.request(bodyFat).then(function (response) {
-	  console.log(response.data);
-  }).catch(function (error) {
-	  console.error(error);
-  });
-  const dailyC = {
+};
+axios.request(bodyFat).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+const dailyC = {
 	method: 'GET',
 	url: 'https://fitness-calculator.p.rapidapi.com/dailycalory',
-	params: {heigth: '180', age: '25', gender: 'male', weigth: '70'},
+	params: { heigth: '180', age: '25', gender: 'male', weigth: '70' },
 	headers: {
-	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-	  'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+		'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+		'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
 	}
-  };
-  axios.request(dailyC).then(function (response) {
-	  console.log(response.data);
-  }).catch(function (error) {
-	  console.error(error);
-  });
-  const options = {
+};
+axios.request(dailyC).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+const options = {
 	method: 'GET',
 	url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/bacon',
-	params: {fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat'},
+	params: { fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat' },
 	headers: {
-	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-	  'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
+		'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+		'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
 	}
-  };
-  axios.request(options).then(function (response) {
-	  console.log(response.data);
-  }).catch(function (error) {
-	  console.error(error);
-  });
+};
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
 //Now we have all the stuff we need .. let's render some components with the Router
 const AuthExample = () => (
+
 	<UserProvider>
 		<Router>
-			
-				<Nav className="App-header" />
-				
-					<Switch>
-						<Route path="/public" component={PublicRoute} />
-						<Route path="/login" component={Login} />
-						<Route path="/register" component={Register} />
-						<PrivateRoute path="/protected" component={ProtectedRoute} />
-						{/* <Route component={NoMatch} /> */}
-					</Switch>
-				
-			
+
+			<Nav className="App-header" />
+
+			<Switch>
+				<Route path="/public" component={PublicRoute} />
+				<Route path="/login" component={Login} />
+				<Route path="/register" component={Register} />
+				<PrivateRoute path="/protected" component={ProtectedRoute} />
+				{/* <GlobalProvider>
+		<Router>
+			<Switch>
+				<Route exact path="/Admin" component={Admin} />
+				<Route path="/add" component={AddWorkout} />
+				<Route path="/edit/:id" component={EditWorkout} />
+			</Switch>
+		</Router>
+	</GlobalProvider> */}
+				{/* <Route component={NoMatch} /> */}
+
+			</Switch>
+
+
 		</Router>
 	</UserProvider>
-)
 
-
+);
 
 
 // This is the private route component this checks for an authorized user here
@@ -147,7 +160,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 			)} />
 		</div>
 	</Router>
-)
+);
 
 
 
@@ -156,5 +169,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 
 
-export default AuthExample
+
+
+export default AuthExample;
 
