@@ -12,7 +12,7 @@ import {
 
 	MDBAnimation
 } from 'mdbreact';
-import Card from '../Card/index'
+
 import '../LoginForm/login.css';
 
 

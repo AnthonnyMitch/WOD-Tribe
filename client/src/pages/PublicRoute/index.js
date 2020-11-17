@@ -9,9 +9,13 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
   MDBInput,
  
 } from 'mdbreact';
+import '../PublicRoute/home.css'
 function PublicRoute() {
 
     return (
@@ -53,7 +57,7 @@ function PublicRoute() {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <section className="my-5" id='tools'>
+      <section className="my-5">
         <h1 className="h1-responsive font-weight-bold text-center my-5">
           <strong>Explore The Tribe</strong>
         </h1>
@@ -108,8 +112,10 @@ function PublicRoute() {
           </MDBRow>
           <hr className="my-5" />
         </section>
+       
+        
 
-        <MDBCard className="my-5 px-1 pb-5 text-center">
+        <MDBRow className=" text-center">
           <MDBCardBody>
             <h2 className="h1-responsive font-weight-bold my-5">
             Our amazing team
@@ -174,7 +180,7 @@ function PublicRoute() {
               </MDBCol>
             </MDBRow>
           </MDBCardBody>
-        </MDBCard>
+        </MDBRow>
         <section className="my-5">
       <h2 className="h1-responsive font-weight-bold text-center my-5 white-text"></h2>
       Contact us
