@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from 'react'
-
+import React, { useEffect, useContext, useState } from 'react'
+import axios from 'axios'
 import { UserContext } from "../../utils/UserContext";
 
 
@@ -15,14 +15,15 @@ import {
 
 } from 'mdbreact';
 import '../ProtectedRoute/user.css';
-/* This is a very simple component.. it probably doesn't need to be a smart component at this point but you never know what's goingto happen in the future */
+
 
 function ProtectedRoute() {
 
 
 	const [user, dispatch] = useContext(UserContext)
 	console.log(user)
-
+	const [results, setResults] = useState({})
+	const [formObject, setFormObject] = useState({})
 	useEffect(() => {
 		fetch('api/users/user', {
 			credentials: 'include'
@@ -45,196 +46,261 @@ function ProtectedRoute() {
 			});
 
 	}, []);
+	function handleChange(event) {
+		const { name, value } = event.target;
+		setFormObject({ ...formObject, [name]: value })
+	}
 
-	
+	function handleSubmit(event) {
+		event.preventDefault();
+		console.log("formValues" + JSON.stringify(formObject))
 
-	
 
-		return (
-			<div id='user'>
-				<MDBView>
-					<MDBMask className='rgba-black-light' />
-					<MDBContainer
-						className='d-flex justify-content-center align-items-center'
-						style={{ height: '100%', width: '100%', paddingTop: '17rem' }}
-					>
+		const bmi = {
+			method: 'GET',
+			url: 'https://fitness-calculator.p.rapidapi.com/bmi',
+			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.sex },
+			headers: {
+				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+			}
+		};
+		axios.request(bmi).then(function (response) {
+			console.log(response.data);
+		}).catch(function (error) {
+			console.error(error);
+		});
+		const idealWeight = {
+			method: 'GET',
+			url: 'https://fitness-calculator.p.rapidapi.com/idealweight',
+			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.sex },
+			headers: {
+				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+			}
+		};
+		axios.request(idealWeight).then(function (response) {
+			console.log(response.data);
+		}).catch(function (error) {
+			console.error(error);
+		});
+		const bodyFat = {
+			method: 'GET',
+			url: 'https://fitness-calculator.p.rapidapi.com/bodyfat',
+			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.sex },
+			headers: {
+				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+			}
+		};
+		axios.request(bodyFat).then(function (response) {
+			console.log(response.data);
+		}).catch(function (error) {
+			console.error(error);
+		});
+		const dailyC = {
+			method: 'GET',
+			url: 'https://fitness-calculator.p.rapidapi.com/dailycalory',
+			params: {heigth: formObject.height, age: formObject.age, gender: formObject.sex, weigth: formObject.weight},
+			headers: {
+				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
+			}
+		};
+		axios.request(dailyC).then(function (response) {
+			console.log(response.data);
+		}).catch(function (error) {
+			console.error(error);
+		});
+
+	}
+	return (
+		<div id='user'>
+			<MDBView>
+				<MDBMask className='rgba-black-light' />
+				<MDBContainer
+					className='d-flex justify-content-center align-items-center'
+					style={{ height: '100%', width: '100%', paddingTop: '17rem' }}
+				>
+					<MDBRow>
+						<MDBCol md='12' className='mb-4 white-text text-center'>
+							<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 '>
+								{user.username ? <span className="userText text-white ml-3 pt-1" to="#">Welcome  {user.username} !</span> : ""}
+							</h1>
+							<hr className='hr-light my-4' />
+							<img
+								src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHaM3MUd1FvlIlAT-6MwVNtrB74al3gosgCCdLHpap3Gf3LDrcJ-flkYV89hb_sjJ3o5KywtYEVF_RjQKgIa894bN_irNLckPMnqX4Wkk&usqp=CAU&ec=45725302'
+								className='rounded-circle img-fluid'
+								alt=''
+							/>
+
+
+
+						</MDBCol>
+					</MDBRow>
+				</MDBContainer>
+			</MDBView>
+			<MDBContainer>
+				<section id="progress" className="text-center my-5">
+					<h2 className="h1-responsive font-weight-bold my-5">
+						Progress
+        </h2>
+					<p className="lead grey-text w-responsive mx-auto mb-5">
+						Check your improvemnet on different movements and workouts
+        </p>
+					<MDBRow>
+						<MDBCol >
+							<MDBContainer>
+								<h3 className="mt-5">Line chart</h3>
+
+							</MDBContainer>
+						</MDBCol>
+					</MDBRow>
+				</section>
+			</MDBContainer>
+			<MDBContainer>
+				<section id="body" className="text-center my-5">
+					<h2 className="h1-responsive font-weight-bold my-5">
+						Body
+        </h2>
+					<p className="lead grey-text w-responsive mx-auto mb-5">
+						On this section, you would be able to check your BMI, body fat, ideal weight and the neccessarie daily calories your body needs.
+        </p>
+					<MDBRow>
+						<MDBCol >
+							<MDBContainer>
+								<MDBRow>
+									<MDBCol md="6"><form>
+										<p className="h4 text-center mb-4">Athlete Details</p>
+										<label htmlFor="defaultFormRegisterNameEx" className="black-text">
+											Age
+        </label>
+										<input type="number" id="ageInput" className="form-control" onChange={handleChange} name="age" />
+										<br />
+										<label htmlFor="sexInput" className="black-text" id="sexInput">
+											Sex
+        </label>
+										<input type="text" id="weightInput" className="form-control" onChange={handleChange} name="sex" />
+										<br />
+										<label htmlFor="defaultFormRegisterConfirmEx" className="black-text">
+											Weight
+        </label>
+										<input type="number" id="weightInput" className="form-control" onChange={handleChange} name="weight" />
+										<br />
+										<label htmlFor="heightInput" className="black-text">
+											Height
+        </label>
+										<input type="number" id="heightInput" className="form-control" onChange={handleChange} name="height" />
+										<div className="text-center mt-4">
+											<MDBBtn color="unique" type="submit" id="calculate" onClick={handleSubmit}>
+												Calculate
+          </MDBBtn>
+										</div>
+									</form></MDBCol>
+									<MDBCol md="6"><form>
+										<p className="h4 text-center mb-4">Results</p>
+										<label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
+											BMI
+        </label>
+										<input type="text" name="BMI" className="form-control" />
+										<br />
+										<label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
+											Body Fat
+        </label>
+										<input type="text" id="defaultFormRegisterEmailEx" className="form-control" />
+										<br />
+										<label htmlFor="defaultFormRegisterConfirmEx" className="black-text" id="idealWeightResult">
+											Ideal Weight
+        </label>
+										<input type="text" id="defaultFormRegisterConfirmEx" className="form-control" />
+										<br />
+										<label htmlFor="defaultFormRegisterPasswordEx" className="black-text" id="dailyCaloriesResult">
+											Daily Calories
+        </label>
+										<input type="text" id="defaultFormRegisterPasswordEx" className="form-control" />
+										<div className="text-center mt-4">
+										</div>
+									</form></MDBCol>
+								</MDBRow>
+							</MDBContainer>
+						</MDBCol>
+					</MDBRow>
+				</section>
+			</MDBContainer>
+			<MDBContainer>
+				<section id="progress" className="text-center my-5">
+					<h2 className="h1-responsive font-weight-bold my-5">
+						Nutrition
+        </h2>
+					<p className="lead grey-text w-responsive mx-auto mb-5">
+						On this section, the Athlete would be able to track their daily calories
+        </p>
+					<MDBContainer>
 						<MDBRow>
-							<MDBCol md='12' className='mb-4 white-text text-center'>
-								<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 '>
-									 {user.username ? <span className="userText text-white ml-3 pt-1" to="#">Welcome  {user.username} !</span> : ""}
-                </h1>
-								<hr className='hr-light my-4' />
-								<img
-									src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHaM3MUd1FvlIlAT-6MwVNtrB74al3gosgCCdLHpap3Gf3LDrcJ-flkYV89hb_sjJ3o5KywtYEVF_RjQKgIa894bN_irNLckPMnqX4Wkk&usqp=CAU&ec=45725302'
-									className='rounded-circle img-fluid'
-									alt=''
-								/>
+							<MDBCol size="4">
+								<form>
+									<p className="h4 text-center mb-4">Breakfast</p>
+									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+										Food
+        </label>
+									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<br />
 
+									<div className="text-center mt-4">
+										<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
+									</div>
+									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+										Total
+        </label>
+									<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
+								</form>
+							</MDBCol>
+							<MDBCol size="4">
+								<form>
+									<p className="h4 text-center mb-4">Lunch</p>
+									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+										Food
+        </label>
+									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<br />
 
+									<div className="text-center mt-4">
+										<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
+									</div>
+									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+										Total
+        </label>
+									<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
+								</form>
+							</MDBCol>
+							<MDBCol size="4">
+								<form>
+									<p className="h4 text-center mb-4">Dinner</p>
+									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+										Food
+        </label>
+									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<br />
 
+									<div className="text-center mt-4">
+										<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
+									</div>
+									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+										Total
+        </label>
+									<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
+								</form>
 							</MDBCol>
 						</MDBRow>
 					</MDBContainer>
-				</MDBView>
-				<MDBContainer>
-					<section id="progress" className="text-center my-5">
-						<h2 className="h1-responsive font-weight-bold my-5">
-							Progress
-        </h2>
-						<p className="lead grey-text w-responsive mx-auto mb-5">
-							Check your improvemnet on different movements and workouts
-        </p>
-						<MDBRow>
-							<MDBCol >
-								<MDBContainer>
-									<h3 className="mt-5">Line chart</h3>
-									
-								</MDBContainer>
-							</MDBCol>
-						</MDBRow>
-					</section>
-				</MDBContainer>
-				<MDBContainer>
-					<section id="body" className="text-center my-5">
-						<h2 className="h1-responsive font-weight-bold my-5">
-							Body
-        </h2>
-						<p className="lead grey-text w-responsive mx-auto mb-5">
-							On this section, you would be able to check your BMI, body fat, ideal weight and the neccessarie daily calories your body needs.
-        </p>
-		<MDBRow>
-                        <MDBCol >
-                            <MDBContainer>
-                                <MDBRow>
-                                    <MDBCol md="6"><form>
-                                        <p className="h4 text-center mb-4">Athlete Details</p>
-                                        <label htmlFor="defaultFormRegisterNameEx" className="black-text">
-                                            Age
-        </label>
-                                        <input type="number" id="ageInput" className="form-control" />
-                                        <br />
-                                        <label htmlFor="sexInput" className="black-text" id="sexInput">
-                                            Sex
-        </label>
-                                        <input type="text" id="weightInput" className="form-control" />
-                                        <br />
-                                        <label htmlFor="defaultFormRegisterConfirmEx" className="black-text">
-                                            Weight
-        </label>
-                                        <input type="number" id="defaultFormRegisterConfirmEx" className="form-control" />
-                                        <br />
-                                        <label htmlFor="heightInput" className="black-text">
-                                            Height
-        </label>
-                                        <input type="number" id="defaultFormRegisterPasswordEx" className="form-control" />
-                                        <div className="text-center mt-4">
-                                            <MDBBtn color="unique" type="submit" id="calculate">
-                                                Calculate
-          </MDBBtn>
-                                        </div>
-                                    </form></MDBCol>
-                                    <MDBCol md="6"><form>
-                                        <p className="h4 text-center mb-4">Results</p>
-                                        <label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
-											BMI
-        </label>
-                                        <input type="text" name="BMI" className="form-control" />
-                                        <br />
-                                        <label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
-                                            Body Fat
-        </label>
-                                        <input type="text" id="defaultFormRegisterEmailEx" className="form-control" />
-                                        <br />
-                                        <label htmlFor="defaultFormRegisterConfirmEx" className="black-text" id="idealWeightResult">
-                                            Ideal Weight
-        </label>
-                                        <input type="text" id="defaultFormRegisterConfirmEx" className="form-control" />
-                                        <br />
-                                        <label htmlFor="defaultFormRegisterPasswordEx" className="black-text" id="dailyCaloriesResult">
-                                            Daily Calories
-        </label>
-                                        <input type="text" id="defaultFormRegisterPasswordEx" className="form-control" />
-                                        <div className="text-center mt-4">
-                                        </div>
-                                    </form></MDBCol>
-                                </MDBRow>
-                            </MDBContainer>
-                        </MDBCol>
-                    </MDBRow>
-					</section>
-				</MDBContainer>
-				<MDBContainer>
-					<section id="progress" className="text-center my-5">
-						<h2 className="h1-responsive font-weight-bold my-5">
-							Nutrition
-        </h2>
-						<p className="lead grey-text w-responsive mx-auto mb-5">
-							On this section, the Athlete would be able to track their daily calories
-        </p>
-						<MDBContainer>
-							<MDBRow>
-								<MDBCol size="4">
-									<form>
-										<p className="h4 text-center mb-4">Breakfast</p>
-										<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-											Food
-        </label>
-										<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
-										<br />
+				</section>
+			</MDBContainer>
+		</div>
+	);
 
-										<div className="text-center mt-4">
-											<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
-										</div>
-										<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-											Total
-        </label>
-										<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
-									</form>
-								</MDBCol>
-								<MDBCol size="4">
-									<form>
-										<p className="h4 text-center mb-4">Lunch</p>
-										<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-											Food
-        </label>
-										<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
-										<br />
-
-										<div className="text-center mt-4">
-											<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
-										</div>
-										<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-											Total
-        </label>
-										<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
-									</form>
-								</MDBCol>
-								<MDBCol size="4">
-									<form>
-										<p className="h4 text-center mb-4">Dinner</p>
-										<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-											Food
-        </label>
-										<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
-										<br />
-
-										<div className="text-center mt-4">
-											<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
-										</div>
-										<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-											Total
-        </label>
-										<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
-									</form>
-								</MDBCol>
-							</MDBRow>
-						</MDBContainer>
-					</section>
-				</MDBContainer>
-			</div>
-		);
-
-	}
+}
 
 
-export default ProtectedRoute
+
+
+export default ProtectedRoute;
