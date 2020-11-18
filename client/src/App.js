@@ -9,34 +9,40 @@ import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Register from "./components/Register";
-
+import {Admin}  from "./components/Admin/Admin";
+import  {AddWorkout}  from "./components/Admin/AddWorkout";
+import  {EditWorkout}  from "./components/Admin/EditWorkout";
+import {GlobalProvider}  from "./context/GlobalState";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import './App.css';
-import { UserProvider } from "./utils/UserContext"
 
+import { UserProvider } from "./utils/UserContext"
 
 //Now we have all the stuff we need .. let's render some components with the Router
 const AuthExample = () => (
+
 	<UserProvider>
 		<Router>
+
 			
-				<Nav className="App-header" />
-				
-					<Switch>
-						<Route path="/public" component={PublicRoute} />
-						<Route path="/login" component={Login} />
-						<Route path="/register" component={Register} />
-						<PrivateRoute path="/protected" component={ProtectedRoute} />
-						{/* <Route component={NoMatch} /> */}
-					</Switch>
-				
+		<Nav className="App-header" />
+			<Switch>
 			
+				<Route path="/public" component={PublicRoute} />
+				<Route path="/login" component={Login} />
+				<Route path="/register" component={Register} />
+				<PrivateRoute path="/protected" component={ProtectedRoute} />
+				<GlobalProvider>
+					<Route exact path="/Admin" component={Admin} />
+					<Route path="/add" component={AddWorkout} />
+					<Route path="/edit/:id" component={EditWorkout} />
+				</GlobalProvider>
+				{/* <Route component={NoMatch} /> */}
+			</Switch>
 		</Router>
 	</UserProvider>
-)
 
-
+);
 
 
 // This is the private route component this checks for an authorized user here
@@ -69,7 +75,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 			)} />
 		</div>
 	</Router>
-)
+);
 
 
 
@@ -78,5 +84,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 
 
-export default AuthExample
+
+
+export default AuthExample;
 
