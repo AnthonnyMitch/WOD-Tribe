@@ -1,4 +1,4 @@
-import React, { createContext, Workouteducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
 // Initial State
@@ -11,7 +11,7 @@ export const GlobalContext = createContext(initialState);
 
 // Provider Component
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = Workouteducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
   // Actions
   const removeWorkout = (id) => {
@@ -46,4 +46,3 @@ export const GlobalProvider = ({ children }) => {
     </GlobalContext.Provider>
   )
 }
-export default GlobalProvider;
