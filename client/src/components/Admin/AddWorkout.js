@@ -6,12 +6,14 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
+  
   Button
 } from "reactstrap";
+import { MDBContainer, MDBRow, MDBCol, MDBInput} from 'mdbreact';
+
 
 export const AddWorkout = () => {
-  const [name, setName] = useState('');
+  const [formObject, setFormObject] = useState({})
   const { addWorkout } = useContext(GlobalContext);
   const history = useHistory();
 
@@ -19,24 +21,40 @@ export const AddWorkout = () => {
     e.preventDefault();
     const newWorkout = {
       id: uuid(),
-      name
+      muscle : formObject.muscle,
+      details: formObject.details
+      
     }
+    console.log(newWorkout);
     addWorkout(newWorkout);
     history.push("/Admin");
   }
 
-  const onChange = (e) => {
-    setName(e.target.value);
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+    
+    
   }
+  
 
   return (
-    <Form onSubmit={onSubmit}>
-      <FormGroup>
-        <Label>Name</Label>
-        <Input type="text" value={name} onChange={onChange} name="name" placeholder="Enter Workout" required></Input>
-      </FormGroup>
-      <Button type="submit">Submit</Button>
-      <Link to="/Admin" className="btn btn-danger ml-2">Cancel</Link>
-    </Form>
+    <MDBContainer>
+      <MDBRow>
+        <MDBCol md="6">
+          <Form onSubmit={onSubmit} className="margin 30px">
+          <p className="h4 text-center mb-4">WOD</p>
+            <FormGroup>
+            <Label>muscle</Label>
+              <MDBInput type="textarea" rows="2"  onChange={onChange} name="muscle" placeholder="Enter Workout" required />
+              <Label>WOD Details</Label>
+              <MDBInput type="textarea" rows="2"  onChange={onChange} name="details" placeholder="Enter Workout" required />
+            </FormGroup>
+            <Button type="submit">Submit</Button>
+            <Link to="/Admin" className="btn btn-danger ml-2">Cancel</Link>
+          </Form>
+        </MDBCol>
+        </MDBRow>
+        </MDBContainer>
   )
 }

@@ -103,9 +103,10 @@ const AuthExample = () => (
 	<UserProvider>
 		<Router>
 
-			<Nav className="App-header" />
-
+			
+		<Nav className="App-header" />
 			<Switch>
+			
 				<Route path="/public" component={PublicRoute} />
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
