@@ -24,6 +24,7 @@ function ProtectedRoute() {
 	console.log(user)
 	const [results, setResults] = useState({})
 	const [formObject, setFormObject] = useState({})
+	const [foodObject, setFoodObject] = useState({})
 	useEffect(() => {
 		fetch('api/users/user', {
 			credentials: 'include'
@@ -46,6 +47,8 @@ function ProtectedRoute() {
 			});
 
 	}, []);
+
+	//-----------Fitness Calculator ----------------------///
 	function handleChange(event) {
 		const { name, value } = event.target;
 		setFormObject({ ...formObject, [name]: value })
@@ -113,8 +116,46 @@ function ProtectedRoute() {
 			console.error(error);
 		});
 
-	}
+//------------ Calorie Tracker-----------------------------------------------/////
+
+
+		// function handleChange(event) {
+		// 	const { name, value } = event.target;
+		// 	setFoodObject({ ...foodObject, [name]: value })
+		// }
+	
+		// function handleSubmit(event) {
+		// 	event.preventDefault();
+		// 	console.log("foodValues" + JSON.stringify(foodObject))
+		
+			const calorieTracker = {
+				method: 'GET',
+				url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese',
+				params:{fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat'},
+				headers: {
+				  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+				  'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
+				}
+			  };
+			  
+			  axios.request(calorieTracker).then(function (response) {
+				  console.log(response.data);
+			  }).catch(function (error) {
+				  console.error(error);
+			  });
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	} 
 	return (
+		<body class="black-skin">
 		<div id='user'>
 			<MDBView>
 				<MDBMask className='rgba-black-light' />
@@ -202,6 +243,7 @@ function ProtectedRoute() {
 										<label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
 											BMI
         </label>
+		
 										<input type="text" name="BMI" className="form-control" />
 										<br />
 										<label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
@@ -243,11 +285,11 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
 										Food
         </label>
-									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<input type="text" id="defaultFormLoginEmailEx" className="form-control" onChange={handleChange} fields="item" />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
+										<MDBBtn color="indigo" type="submit" onClick={handleSubmit}>Calculate</MDBBtn>
 									</div>
 									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
 										Total
@@ -296,6 +338,7 @@ function ProtectedRoute() {
 				</section>
 			</MDBContainer>
 		</div>
+		</body>
 	);
 
 }

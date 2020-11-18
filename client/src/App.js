@@ -14,22 +14,8 @@ import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import './App.css';
 import { UserProvider } from "./utils/UserContext"
-import axios from 'axios'
 
-  const options = {
-	method: 'GET',
-	url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/bacon',
-	params: {fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat'},
-	headers: {
-	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-	  'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
-	}
-  };
-  axios.request(options).then(function (response) {
-	  console.log(response.data);
-  }).catch(function (error) {
-	  console.error(error);
-  });
+
 //Now we have all the stuff we need .. let's render some components with the Router
 const AuthExample = () => (
 	<UserProvider>
