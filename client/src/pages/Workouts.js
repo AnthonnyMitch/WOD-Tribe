@@ -46,7 +46,7 @@ function Workouts() {
     if (formObject.muscle && formObject.weigth) {
       API.saveWorkout({
         muscle: formObject.muscle,
-        weigth: formObject.weigth,
+        weight: formObject.weigth,
         details: formObject.details
       })
         .then(res => loadWorkouts())
