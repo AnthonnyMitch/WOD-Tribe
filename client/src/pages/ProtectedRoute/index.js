@@ -23,6 +23,7 @@ function ProtectedRoute() {
 	const [user, dispatch] = useContext(UserContext)
 	console.log(user)
 	const [results, setResults] = useState({})
+	const [responseData, setResponseData] = useState({})
 	const [formObject, setFormObject] = useState({})
 	// const [foodObject, setFoodObject] = useState({})
 	useEffect(() => {
@@ -69,7 +70,7 @@ function ProtectedRoute() {
 			}
 		};
 		axios.request(bmi).then(function (response) {
-			console.log(response.data);
+			setResponseData({...responseData, bmi: response.data});
 		}).catch(function (error) {
 			console.error(error);
 		});
@@ -244,7 +245,7 @@ function ProtectedRoute() {
 											BMI
         </label>
 		
-										<input type="text" name="BMI" className="form-control" />
+	 <input type="text" name="BMI" className="form-control"/> 
 										<br />
 										<label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
 											Body Fat
