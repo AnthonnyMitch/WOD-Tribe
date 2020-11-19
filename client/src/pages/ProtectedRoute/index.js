@@ -1,8 +1,10 @@
 import React, { useEffect, useContext, useState } from 'react'
 import axios from 'axios'
 import { UserContext } from "../../utils/UserContext";
-
-
+import { useParams } from "react-router-dom";
+import { Col, Row, Container } from "../../components/Grid";
+import Jumbotron from "../../components/Jumbotron";
+import API from "../../utils/API";
 import {
 
 	MDBMask,
@@ -18,6 +20,16 @@ import '../ProtectedRoute/user.css';
 
 
 function ProtectedRoute() {
+	const [workout, setworkout] = useState({})
+
+	// When this component mounts, grab the workout with the _id of props.match.params.id
+	// e.g. localhost:3000/workouts/599dcb67f0f16317844583fc
+	const {id} = useParams()
+	useEffect(() => {
+	  API.getWorkouts(id)
+		.then(res => setworkout(res.data))
+		.catch(err => console.log(err));
+	}, [])
 
 
 	const [user, dispatch] = useContext(UserContext)
@@ -182,22 +194,29 @@ function ProtectedRoute() {
 				</MDBContainer>
 			</MDBView>
 			<MDBContainer>
-				<section id="progress" className="text-center my-5">
-					<h2 className="h1-responsive font-weight-bold my-5">
-						Progress
-        </h2>
-					<p className="lead grey-text w-responsive mx-auto mb-5">
-						Check your improvemnet on different movements and workouts
-        </p>
-					<MDBRow>
-						<MDBCol >
-							<MDBContainer>
-								<h3 className="mt-5">Line chart</h3>
+			<Container fluid>
+        <Row>
+          <Col size="md-12">
+            <Jumbotron>
+              <h1>
+                {workout.muscle} with {workout.weight}
+              </h1>
+            </Jumbotron>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-10 md-offset-1">
+            <article>
+              <h1> WOD Details</h1>
+              <p>
+                {workout.details}
+              </p>
+            </article>
+          </Col>
+        </Row>
+      </Container>
+			
 
-							</MDBContainer>
-						</MDBCol>
-					</MDBRow>
-				</section>
 			</MDBContainer>
 			<MDBContainer>
 				<section id="body" className="text-center my-5">
