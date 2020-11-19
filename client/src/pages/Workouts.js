@@ -43,11 +43,11 @@ function Workouts() {
   // Then reload workouts from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.muscle && formObject.weigth) {
       API.saveWorkout({
-        muscle: formObject.title,
-        weigth: formObject.author,
-        details: formObject.synopsis
+        muscle: formObject.muscle,
+        weigth: formObject.weigth,
+        details: formObject.details
       })
         .then(res => loadWorkouts())
         .catch(err => console.log(err));
