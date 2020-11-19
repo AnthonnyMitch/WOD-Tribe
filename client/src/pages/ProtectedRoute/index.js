@@ -24,7 +24,12 @@ function ProtectedRoute() {
 	console.log(user)
 	const [results, setResults] = useState({})
 	const [responseData, setResponseData] = useState({})
+	const [responseData2, setResponseData2] = useState({})
+	const [responseData3, setResponseData3] = useState({})
+	const [responseData4, setResponseData4] = useState({})
 	const [formObject, setFormObject] = useState({})
+	const [foodObject, setFoodObject] = useState({})
+	const [responseDataFood, setResponseDataFood] = useState({})
 	// const [foodObject, setFoodObject] = useState({})
 	useEffect(() => {
 		fetch('api/users/user', {
@@ -70,7 +75,7 @@ function ProtectedRoute() {
 			}
 		};
 		axios.request(bmi).then(function (response) {
-			setResponseData({...responseData, bmi: response.data});
+			setResponseData(response.data);
 		}).catch(function (error) {
 			console.error(error);
 		});
@@ -84,7 +89,7 @@ function ProtectedRoute() {
 			}
 		};
 		axios.request(idealWeight).then(function (response) {
-			console.log(response.data);
+			setResponseData2(response.data);
 		}).catch(function (error) {
 			console.error(error);
 		});
@@ -98,66 +103,66 @@ function ProtectedRoute() {
 			}
 		};
 		axios.request(bodyFat).then(function (response) {
-			console.log(response.data);
+			setResponseData3(response.data);
 		}).catch(function (error) {
 			console.error(error);
 		});
 		const dailyC = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/dailycalory',
-			params: {heigth: formObject.height, age: formObject.age, gender: formObject.sex, weigth: formObject.weight},
+			params: { heigth: formObject.height, age: formObject.age, gender: formObject.sex, weigth: formObject.weight },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
 			}
 		};
 		axios.request(dailyC).then(function (response) {
-			console.log(response.data);
+			setResponseData4(response.data);
 		}).catch(function (error) {
 			console.error(error);
 		});
 
-//------------ Calorie Tracker-----------------------------------------------/////
+		//------------ Calorie Tracker-----------------------------------------------/////
 
 
-		// function handleChange(event) {
+		// function handleFoodChange(event) {
 		// 	const { name, value } = event.target;
 		// 	setFoodObject({ ...foodObject, [name]: value })
 		// }
-	
-		// function handleSubmit(event) {
+
+		// function handleFoodSubmit(event) {
 		// 	event.preventDefault();
 		// 	console.log("foodValues" + JSON.stringify(foodObject))
-		
-			// const calorieTracker = {
-			// 	method: 'GET',
-			// 	url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese',
-			// 	params:{fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat'},
-			// 	headers: {
-			// 	  'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-			// 	  'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
-			// 	}
-			//   };
-			  
-			//   axios.request(calorieTracker).then(function (response) {
-			// 	  console.log(response.data);
-			//   }).catch(function (error) {
-			// 	  console.error(error);
-			//   });
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	} 
+
+		// 	const calorieTracker = {
+		// 		method: 'GET',
+		// 		url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese',
+		// 		params: { fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat' },
+		// 		headers: {
+		// 			'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+		// 			'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
+		// 		}
+		// 	};
+
+		// 	axios.request(calorieTracker).then(function (response) {
+		// 		setResponseDataFood(response.data);
+		// 	}).catch(function (error) {
+		// 		console.error(error);
+		// 	});
+		// }
+
+
+
+
+
+
+
+
+
+	}
 	return (
-		<body class="black-skin">
-		<div id='user'>
+
+		<div id='user' className="black-skin">
 			<MDBView>
 				<MDBMask className='rgba-black-light' />
 				<MDBContainer
@@ -244,25 +249,29 @@ function ProtectedRoute() {
 										<label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
 											BMI
         </label>
-		
-	 <input type="text" name="BMI" className="form-control"/> 
+
+										<output type="text" name="BMI" className="form-control">{responseData.bmi}</output>
+										<br />	<label htmlFor="defaultFormRegisterConfirmEx" className="black-text" id="idealWeightResult">
+											Ideal Weight
+        </label>
+										<output type="text" id="defaultFormRegisterConfirmEx" className="form-control" >{responseData2.Hamwi}</output>
+
 										<br />
 										<label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
 											Body Fat
         </label>
-										<input type="text" id="defaultFormRegisterEmailEx" className="form-control" />
-										<br />
-										<label htmlFor="defaultFormRegisterConfirmEx" className="black-text" id="idealWeightResult">
-											Ideal Weight
-        </label>
-										<input type="text" id="defaultFormRegisterConfirmEx" className="form-control" />
+										<output type="text" id="defaultFormRegisterEmailEx" className="form-control" >{responseData3['Body Fat (BMI method)']}</output>
 										<br />
 										<label htmlFor="defaultFormRegisterPasswordEx" className="black-text" id="dailyCaloriesResult">
 											Daily Calories
         </label>
-										<input type="text" id="defaultFormRegisterPasswordEx" className="form-control" />
+										<output type="text" id="defaultFormRegisterPasswordEx" className="form-control">{JSON.stringify(responseData4.data)}</output>
 										<div className="text-center mt-4">
+											<MDBBtn color="unique" type="submit" id="Clear">
+												Clear
+          </MDBBtn>
 										</div>
+
 									</form></MDBCol>
 								</MDBRow>
 							</MDBContainer>
@@ -286,7 +295,7 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
 										Food
         </label>
-									<input type="text" id="defaultFormLoginEmailEx" className="form-control"/>
+									<input type="text" id="defaultFormLoginEmailEx" className="form-control"  />
 									<br />
 
 									<div className="text-center mt-4">
@@ -295,7 +304,7 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
 										Total
         </label>
-									<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
+									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
 								</form>
 							</MDBCol>
 							<MDBCol size="4">
@@ -313,7 +322,7 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
 										Total
         </label>
-									<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
+									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
 								</form>
 							</MDBCol>
 							<MDBCol size="4">
@@ -331,7 +340,7 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
 										Total
         </label>
-									<input type="text" id="defaultFormLoginPasswordEx" className="form-control" />
+									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
 								</form>
 							</MDBCol>
 						</MDBRow>
@@ -339,7 +348,7 @@ function ProtectedRoute() {
 				</section>
 			</MDBContainer>
 		</div>
-		</body>
+
 	);
 
 }
