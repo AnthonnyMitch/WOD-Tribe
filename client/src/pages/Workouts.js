@@ -95,7 +95,7 @@ function Workouts() {
                   <ListItem key={workout._id}>
                     <Link to={"/workouts/" + workout._id}>
                       <strong>
-                        {workout.title} by {workout.author}
+                        {workout.muscle} with {workout.weight}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteWorkout(workout._id)} />
