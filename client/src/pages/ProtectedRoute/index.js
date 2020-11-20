@@ -26,12 +26,12 @@ function ProtectedRoute() {
 	// e.g. localhost:3000/workouts/599dcb67f0f16317844583fc
 	const {id} = useParams()
 	useEffect(() => {
-	  API.getWorkouts(id)
+	  API.getWorkout(id)
 		.then(res => setworkout(res.data))
 		.catch(err => console.log(err));
 	}, [])
 
-
+//-------user api ----------------------///
 	const [user, dispatch] = useContext(UserContext)
 	console.log(user)
 	const [results, setResults] = useState({})
@@ -195,6 +195,7 @@ function ProtectedRoute() {
 			</MDBView>
 			<MDBContainer>
 			<Container fluid>
+				<h1>workout of The Day</h1>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -205,13 +206,13 @@ function ProtectedRoute() {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
+          <Col size="md-12">
+		  <Jumbotron>
               <h1> WOD Details</h1>
               <p>
                 {workout.details}
               </p>
-            </article>
+			  </Jumbotron>
           </Col>
         </Row>
       </Container>
