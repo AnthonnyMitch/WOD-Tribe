@@ -55,6 +55,7 @@ function ProtectedRoute() {
 	}, []);
 
 	//-----------Fitness Calculator ----------------------///
+	 
 	function handleChange(event) {
 		const { name, value } = event.target;
 		setFormObject({ ...formObject, [name]: value })
@@ -171,7 +172,7 @@ function ProtectedRoute() {
 				>
 					<MDBRow>
 						<MDBCol md='12' className='mb-4 white-text text-center'>
-							<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 '>
+							<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
 								{user.username ? <span className="userText text-white ml-3 pt-1" to="#">Welcome  {user.username} !</span> : ""}
 							</h1>
 							<hr className='hr-light my-4' />
@@ -217,7 +218,7 @@ function ProtectedRoute() {
 						<MDBCol >
 							<MDBContainer>
 								<MDBRow>
-									<MDBCol md="6"><form>
+									<MDBCol md="6"><form id="fitnessCal">
 										<p className="h4 text-center mb-4">Athlete Details</p>
 										<label htmlFor="defaultFormRegisterNameEx" className="black-text">
 											Age
@@ -244,7 +245,7 @@ function ProtectedRoute() {
           </MDBBtn>
 										</div>
 									</form></MDBCol>
-									<MDBCol md="6"><form>
+									<MDBCol md="6"><form id="fitnessCal">
 										<p className="h4 text-center mb-4">Results</p>
 										<label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
 											BMI
@@ -267,7 +268,7 @@ function ProtectedRoute() {
         </label>
 										<output type="text" id="defaultFormRegisterPasswordEx" className="form-control">{JSON.stringify(responseData4.data)}</output>
 										<div className="text-center mt-4">
-											<MDBBtn color="unique" type="submit" id="Clear">
+											<MDBBtn color="unique" type="clear" name="cancelCourse" value="cancel" >
 												Clear
           </MDBBtn>
 										</div>
