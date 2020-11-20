@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import Card from "../Card"
+
 import {
   MDBMask,
   MDBRow,
@@ -8,6 +8,7 @@ import {
   MDBBtn,
   MDBView,
   MDBContainer,
+  MDBCard,
   MDBCardBody,
 
   MDBAnimation
@@ -48,7 +49,7 @@ style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
             </MDBAnimation>
             <MDBCol md='6' xl='5' className='mb-4'>
               <MDBAnimation type='fadeInRight' delay='.3s'>
-			  <Card title="Register a New User">
+			  <MDBCard title="Register a New User">
                   <MDBCardBody className='white-text'>
                     <h3 className='text-center'>
                       <MDBIcon icon='user' /> Register:
@@ -71,7 +72,7 @@ style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
 				</div>
 			</form>
                   </MDBCardBody>
-				  </Card>
+				  </MDBCard>
               </MDBAnimation>
             </MDBCol>
           </MDBRow>

@@ -9,10 +9,7 @@ import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import {Admin}  from "./components/Admin/Admin";
-import  {AddWorkout}  from "./components/Admin/AddWorkout";
-import  {EditWorkout}  from "./components/Admin/EditWorkout";
-import {GlobalProvider}  from "./context/GlobalState";
+import Workouts from "./pages/Workouts";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
 
@@ -32,11 +29,10 @@ const AuthExample = () => (
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
 				<PrivateRoute path="/protected" component={ProtectedRoute} />
-				<GlobalProvider>
-					<Route exact path="/Admin" component={Admin} />
-					<Route path="/add" component={AddWorkout} />
-					<Route path="/edit/:id" component={EditWorkout} />
-				</GlobalProvider>
+				<Route exact path={["/", "/workouts"]}>
+            <Workouts />
+          </Route>
+          <Route exact path="/workouts/:id"></Route>
 				{/* <Route component={NoMatch} /> */}
 			</Switch>
 		</Router>
