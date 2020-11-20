@@ -20,18 +20,15 @@ import '../ProtectedRoute/user.css';
 
 
 function ProtectedRoute() {
+
+	//--------------WOD api---------------///
 	const [workout, setworkout] = useState({})
 
 	// When this component mounts, grab the workout with the _id of props.match.params.id
 	// e.g. localhost:3000/workouts/599dcb67f0f16317844583fc
-	const {id} = useParams()
-	useEffect(() => {
-	  API.getWorkout(id)
-		.then(res => setworkout(res.data))
-		.catch(err => console.log(err));
-	}, [])
+	
 
-//-------user api ----------------------///
+	//-------user api ----------------------///
 	const [user, dispatch] = useContext(UserContext)
 	console.log(user)
 	const [results, setResults] = useState({})
@@ -65,6 +62,9 @@ function ProtectedRoute() {
 			});
 
 	}, []);
+
+	// create a method to get WOD , call to action. create a button to get the new WOD.
+	// create a new function get WOD. get the last WOD created.
 
 	//-----------Fitness Calculator ----------------------///
 	 

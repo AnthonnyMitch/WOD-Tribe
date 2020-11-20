@@ -36,16 +36,14 @@ style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
               delay='.3s'
               className='white-text text-center text-md-left col-md-6 mt-xl-5 mb-5'
             >
-              <h1 className='h1-responsive font-weight-bold'>
-                WOD Tribe <MDBIcon fab icon="mandalorian" />
-              </h1>
+              <h2 className='h1-responsive font-weight-bold'>
+              <MDBIcon fab icon="mandalorian" /> WOD Tribe 
+              </h2>
               <hr className='hr-light' />
               <h6 className='mb-4'>
-                Aqui vamos a poner el mission estatement del app y cuando le den click al button learn more los van a moder a un nivel de la paginadonde les explicares como funciona cada herramienta.
+              Wod Tribe exists for one reason, and that is to constantly challenge and lead our members to achieve the highest level of sustainable fitness you can reach..
               </h6>
-              <MDBBtn outline color='white'>
-                Learn More
-              </MDBBtn>
+              
             </MDBAnimation>
             <MDBCol md='6' xl='5' className='mb-4'>
               <MDBAnimation type='fadeInRight' delay='.3s'>
