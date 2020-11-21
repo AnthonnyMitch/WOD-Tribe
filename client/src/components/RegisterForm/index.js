@@ -66,7 +66,7 @@ style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
 				<div className="form-group">
 					<input className="form-control" ref={userNameRef} type='text' name="username" placeholder='Enter Username' /><br />
 					<input className="form-control" ref={passwordRef} type='password' name="password" placeholder='Password' /><br />
-					<button className="btn btn btn-primary" type='submit'>Submit</button>
+					<button className="btn btn btn-success" type='submit'>Submit</button>
 				</div>
 			</form>
                   </MDBCardBody>

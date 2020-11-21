@@ -35,7 +35,7 @@ function ProtectedRoute() {
 	const [responseData, setResponseData] = useState({})
 	const [responseData2, setResponseData2] = useState({})
 	const [responseData3, setResponseData3] = useState({})
-	const [responseData4, setResponseData4] = useState({})
+	const [responseData4, setResponseData4] = useState({data: {}})
 	const [formObject, setFormObject] = useState({})
 	const [foodObject, setFoodObject] = useState({})
 	const [responseDataFood, setResponseDataFood] = useState({})
@@ -81,7 +81,7 @@ function ProtectedRoute() {
 		const bmi = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/bmi',
-			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.sex },
+			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.gender },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
@@ -95,7 +95,7 @@ function ProtectedRoute() {
 		const idealWeight = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/idealweight',
-			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.sex },
+			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.gender },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
@@ -109,7 +109,7 @@ function ProtectedRoute() {
 		const bodyFat = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/bodyfat',
-			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.sex },
+			params: { age: formObject.age, height: formObject.height, weight: formObject.weight, gender: formObject.gender },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
@@ -123,7 +123,7 @@ function ProtectedRoute() {
 		const dailyC = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/dailycalory',
-			params: { heigth: formObject.height, age: formObject.age, gender: formObject.sex, weigth: formObject.weight },
+			params: { heigth: formObject.height, age: formObject.age, gender: formObject.gender, weigth: formObject.weight },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
@@ -182,15 +182,15 @@ function ProtectedRoute() {
 					className='d-flex justify-content-center align-items-center'
 					style={{ height: '100%', width: '100%', paddingTop: '17rem' }}
 				>
-					<MDBRow>
+					<MDBRow className="text-center">
 						<MDBCol md='12' className='mb-4 white-text text-center'>
-							<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
-								{user.username ? <span className="userText text-white ml-3 pt-1" to="#">Welcome  {user.username} !</span> : ""}
-							</h1>
+							<h3 className='h1-reponsive white-text  font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
+								{user.username ? <span className="userText text-white ml-3 pt-1" to="#"> <strong>Welcome  {user.username} !</strong></span> : ""}
+							</h3>
 							<hr className='hr-light my-4' />
 							<img
 								src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHaM3MUd1FvlIlAT-6MwVNtrB74al3gosgCCdLHpap3Gf3LDrcJ-flkYV89hb_sjJ3o5KywtYEVF_RjQKgIa894bN_irNLckPMnqX4Wkk&usqp=CAU&ec=45725302'
-								className='rounded-circle img-fluid'
+								className='rounded-circle img-fluid center'
 								alt=''
 							/>
 
@@ -200,9 +200,9 @@ function ProtectedRoute() {
 					</MDBRow>
 				</MDBContainer>
 			</MDBView>
-			<MDBContainer>
-			<Container fluid>
-				<h1>workout of The Day</h1>
+			<MDBContainer id='wod'>
+			<Container fluid >
+				<h1 className='white-text'>Workout of The Day</h1>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -215,7 +215,7 @@ function ProtectedRoute() {
         <Row>
           <Col size="md-12">
 		  <Jumbotron>
-              <h1> WOD Details</h1>
+              <h1 id='wodDetails'> WOD Details</h1>
               <p>
                 {workout.details}
               </p>
@@ -228,10 +228,10 @@ function ProtectedRoute() {
 			</MDBContainer>
 			<MDBContainer>
 				<section id="body" className="text-center my-5">
-					<h2 className="h1-responsive font-weight-bold my-5">
+					<h2 className="h1-responsive font-weight-bold my-5 white-text">
 						Body
         </h2>
-					<p className="lead grey-text w-responsive mx-auto mb-5">
+					<p className="lead grey-text w-responsive mx-auto mb-5 white-text">
 						On this section, you would be able to check your BMI, body fat, ideal weight and the neccessarie daily calories your body needs.
         </p>
 					<MDBRow>
@@ -239,56 +239,56 @@ function ProtectedRoute() {
 							<MDBContainer>
 								<MDBRow>
 									<MDBCol md="6"><form id="fitnessCal">
-										<p className="h4 text-center mb-4">Athlete Details</p>
-										<label htmlFor="defaultFormRegisterNameEx" className="black-text">
+										<p className="h4 text-center mb-4 white-text">Athlete Details</p>
+										<label htmlFor="defaultFormRegisterNameEx" className="white-text">
 											Age
         </label>
 										<input type="number" id="ageInput" className="form-control" onChange={handleChange} name="age" />
 										<br />
-										<label htmlFor="sexInput" className="black-text" id="sexInput">
-											Sex
+										<label htmlFor="genderInput" className="white-text" id="genderInput">
+											Gender
         </label>
-										<input type="text" id="weightInput" className="form-control" onChange={handleChange} name="sex" />
+										<input type="text" id="weightInput" className="form-control" onChange={handleChange} name="gender" />
 										<br />
-										<label htmlFor="defaultFormRegisterConfirmEx" className="black-text">
-											Weight
+										<label htmlFor="defaultFormRegisterConfirmEx" className="white-text">
+											Weight (kg)
         </label>
 										<input type="number" id="weightInput" className="form-control" onChange={handleChange} name="weight" />
 										<br />
-										<label htmlFor="heightInput" className="black-text">
-											Height
+										<label htmlFor="heightInput" className="white-text">
+											Height (cm)
         </label>
 										<input type="number" id="heightInput" className="form-control" onChange={handleChange} name="height" />
 										<div className="text-center mt-4">
-											<MDBBtn color="unique" type="submit" id="calculate" onClick={handleSubmit}>
+											<MDBBtn color="green" type="submit" id="calculate" onClick={handleSubmit}>
 												Calculate
           </MDBBtn>
 										</div>
 									</form></MDBCol>
 									<MDBCol md="6"><form id="fitnessCal">
-										<p className="h4 text-center mb-4">Results</p>
-										<label htmlFor="defaultFormRegisterNameEx" className="black-text" id="bmiResult">
+										<p className="h4 text-center mb-4 white-text">Results</p>
+										<label htmlFor="defaultFormRegisterNameEx" className="white-text" id="bmiResult">
 											BMI
         </label>
 
 										<output type="text" name="BMI" className="form-control">{responseData.bmi}</output>
-										<br />	<label htmlFor="defaultFormRegisterConfirmEx" className="black-text" id="idealWeightResult">
-											Ideal Weight
+										<br />	<label htmlFor="defaultFormRegisterConfirmEx" className="white-text" id="idealWeightResult">
+											Ideal Weight (kg)
         </label>
 										<output type="text" id="defaultFormRegisterConfirmEx" className="form-control" >{responseData2.Hamwi}</output>
 
 										<br />
-										<label htmlFor="defaultFormRegisterEmailEx" className="black-text" id="bodyFatResult">
+										<label htmlFor="defaultFormRegisterEmailEx" className="white-text" id="bodyFatResult">
 											Body Fat
         </label>
 										<output type="text" id="defaultFormRegisterEmailEx" className="form-control" >{responseData3['Body Fat (BMI method)']}</output>
 										<br />
-										<label htmlFor="defaultFormRegisterPasswordEx" className="black-text" id="dailyCaloriesResult">
+										<label htmlFor="defaultFormRegisterPasswordEx" className="white-text" id="dailyCaloriesResult">
 											Daily Calories
         </label>
-										<output type="text" id="defaultFormRegisterPasswordEx" className="form-control">{JSON.stringify(responseData4.data)}</output>
+										<output type="text" id="defaultFormRegisterPasswordEx" className="form-control">{responseData4.data.BMR}</output>
 										<div className="text-center mt-4">
-											<MDBBtn color="unique" type="clear" name="cancelCourse" value="cancel" >
+											<MDBBtn color="green" type="clear" name="cancelCourse" value="cancel" >
 												Clear
           </MDBBtn>
 										</div>
@@ -302,27 +302,27 @@ function ProtectedRoute() {
 			</MDBContainer>
 			<MDBContainer>
 				<section id="progress" className="text-center my-5">
-					<h2 className="h1-responsive font-weight-bold my-5">
+					<h2 className="h1-responsive font-weight-bold my-5 white-text">
 						Nutrition
         </h2>
-					<p className="lead grey-text w-responsive mx-auto mb-5">
+					<p className="lead white-text w-responsive mx-auto mb-5">
 						On this section, the Athlete would be able to track their daily calories
         </p>
 					<MDBContainer>
 						<MDBRow>
 							<MDBCol size="4">
 								<form>
-									<p className="h4 text-center mb-4">Breakfast</p>
-									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+									<p className="h4 text-center mb-4 white-text">Breakfast</p>
+									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
 									<input type="text" id="defaultFormLoginEmailEx" className="form-control"  />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="indigo" type="submit" >Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit" >Calculate</MDBBtn>
 									</div>
-									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
         </label>
 									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
@@ -330,17 +330,17 @@ function ProtectedRoute() {
 							</MDBCol>
 							<MDBCol size="4">
 								<form>
-									<p className="h4 text-center mb-4">Lunch</p>
-									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+									<p className="h4 text-center mb-4 white-text">Lunch</p>
+									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
 									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit">Calculate</MDBBtn>
 									</div>
-									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
         </label>
 									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
@@ -348,17 +348,17 @@ function ProtectedRoute() {
 							</MDBCol>
 							<MDBCol size="4">
 								<form>
-									<p className="h4 text-center mb-4">Dinner</p>
-									<label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+									<p className="h4 text-center mb-4 white-text">Dinner</p>
+									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
 									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="indigo" type="submit">Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit">Calculate</MDBBtn>
 									</div>
-									<label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
         </label>
 									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>

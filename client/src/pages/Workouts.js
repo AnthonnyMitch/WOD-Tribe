@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-
+import '../pages/workouts.css'
 function Workouts() {
   // Setting our component's initial state
   const [workouts, setWorkouts] = useState([])
@@ -55,11 +55,11 @@ function Workouts() {
   };
 
     return (
-      <Container fluid>
+      <Container fluid id='workouts'>
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Create The Workout of the day</h1>
+              <h2>Create The Workout of the day</h2>
             </Jumbotron>
             <form>
               <Input
