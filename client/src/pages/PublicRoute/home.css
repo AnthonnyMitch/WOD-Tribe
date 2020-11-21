@@ -6,12 +6,18 @@
     min-height: 100vh;
   }
   
-#tools{
-  background-color: #6666;
+#home{
+  background-image:url('https://tunthehyper.files.wordpress.com/2018/03/dark-camo-wallpaper-1376-1508-hd-wallpapers.jpg?w=880&h=312&crop=1');
 }
 h1 {
   font-size: 100px !important;
 }
 h2 {
   font-size: 80px !important;
+}
+
+img{
+  shape-image-threshold: round;
+  width: 400px;
+  height: 400px;
 }

@@ -16,6 +16,7 @@ import {
 
 } from 'mdbreact';
 import images from "../../images/andrew.jpg"
+import anthonny from "../../anthonny/IMG_2862.jpg"
 import '../PublicRoute/home.css'
 function PublicRoute() {
 
@@ -52,7 +53,7 @@ function PublicRoute() {
       </MDBView>
      
       <section className="my-5">
-        <h2 className="h1-responsive font-weight-bold text-center my-5">
+        <h2 className="h1-responsive font-weight-bold text-center my-5 white-text">
           <strong>Explore The Tribe</strong>
         </h2>
         <h4 className="white-text w-responsive text-center mx-auto mb-5">
@@ -69,7 +70,7 @@ function PublicRoute() {
           </MDBCol>
           <MDBCol lg="7">
             <h3 >  <MDBIcon icon="dumbbell" />  Check The Workout of the Day</h3>
-            <h4>
+            <h4 className='white-text'>
             A written workout plan not only provides a layout for the day, but it also sets up the big picture for weeks or months to come. In other words, an established plan dictates the work that must be done in order to reach the goal.
          </h4>
           </MDBCol>
@@ -78,7 +79,7 @@ function PublicRoute() {
         <MDBRow>
           <MDBCol lg="7">
             <h3>  <MDBIcon icon="utensils" />        Track your calories</h3>
-            <h4>
+            <h4  className='white-text'>
               Tracking your daily calories is a very important part of your fitness journey, that's why on this section you can track your breakfast, lunch and dinner calories just by typing its ingredients.</h4>
           </MDBCol>
           <MDBCol lg="5">
@@ -100,7 +101,7 @@ function PublicRoute() {
           </MDBCol>
           <MDBCol lg="7">
             <h3>  <MDBIcon icon="calculator" />          Fitness Calculator</h3>
-            <h4>
+            <h4  className='white-text'>
              On this section, we offers a number of free tools to help you determine everything from your body mass index (BMI) to your body fat composition, daily caloric needs and more. Each of those tools will help you find an exercise program that fits your individual needs and goals, whether that be losing weight or increasing your strength with weight training.
            </h4>
           </MDBCol>
@@ -112,7 +113,7 @@ function PublicRoute() {
 
       <MDBRow className=" text-center">
         <MDBCardBody>
-          <h2 className="h1-responsive font-weight-bold my-5">
+          <h2 className="h1-responsive font-weight-bold my-5  white-text">
             Our amazing team
           </h2>
           <p className="white-text w-responsive mx-auto mb-5">
@@ -122,7 +123,7 @@ function PublicRoute() {
             <MDBCol md="6" className="mb-md-0 mb-5">
               <img
                 tag="img"
-                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+                src={anthonny}
                 className="rounded-circle z-depth-1 img-fluid"
                 alt="Sample avatar"
               />
@@ -130,7 +131,7 @@ function PublicRoute() {
                 Anthonny Rodriguez
               </h4>
               <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green" href="https://www.instagram.com/andrewmrb22/"
+              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green" href="https://www.instagram.com/anthonnymitchell/"
                 target="blank">
                 <MDBIcon fab icon="instagram" />
               </MDBBtn>
@@ -139,12 +140,12 @@ function PublicRoute() {
                 floating
                 size="sm"
                 className="mx-1 mb-0 btn-green"
-                href="https://www.instagram.com/andrewmrb22/"
+                href="https://github.com/AnthonnyMitch"
                 target="blank"
               >
                 <MDBIcon fab icon="github" />
               </MDBBtn>
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green" href="https://www.instagram.com/andrewmrb22/"
+              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green" href="https://twitter.com/AnthonnyMitche1"
                 target="blank">
                 <MDBIcon fab icon="twitter" />
               </MDBBtn>
@@ -184,7 +185,7 @@ function PublicRoute() {
       </MDBRow>
       <hr className="my-5" />
       <section className="my-5" >
-        <h2 className="h1-responsive font-weight-bold my-5" className=" text-center">
+        <h2 className="h1-responsive font-weight-bold my-5 white-text  text-center" >
           Contact Us
           </h2>
 

@@ -35,11 +35,11 @@ function LoginForm({ onLogin }) {
 						<MDBAnimation type='fadeInRight' delay='.3s'>
 							<MDBCard id='classic-card' className="card">
 								<MDBCardBody className='white-text'>
-									<h1 className='text-center'>
+									<h2 className='text-center'>
 
 
 										WOD Tribe
-						  </h1>
+						  </h2>
 									<h3 className='text-center'>
 										<MDBIcon fab icon="mandalorian" />Login:
 						</h3>
