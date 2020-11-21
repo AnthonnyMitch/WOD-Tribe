@@ -65,7 +65,7 @@ function PublicRoute() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5a57e930f9a61ed005b80c45/1515713915152-TBG1NUV2DUAKR8VIC5M4/ke17ZwdGBToddI8pDm48kDS1ERbUEGbRuV0gI1MhqsAUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcTDMZdXjHNZqplaNSeVjrXHJclnzbXwJyYZyWxDXN4DBgGwjbkKGcQepkTI2TJ4nb/Crossfit-banner-1.jpg?format=2500w"
               alt=""
-              className="img-fluid rounded z-depth-1"
+              className="img-fluid rounded z-depth-1 text-center"
             />
           </MDBCol>
           <MDBCol lg="7">
@@ -86,7 +86,7 @@ function PublicRoute() {
             <img
               src="https://sipipa.com/blog/wp-content/uploads/2018/07/counting-calories-watching-what-you-eat.jpg"
               alt=""
-              className="img-fluid rounded z-depth-1"
+              className="img-fluid rounded z-depth-1 text-center"
             />
           </MDBCol>
         </MDBRow>
@@ -116,21 +116,21 @@ function PublicRoute() {
           <h2 className="h1-responsive font-weight-bold my-5  white-text">
             Our amazing team
           </h2>
-          <p className="white-text w-responsive mx-auto mb-5">
+          <h4 className='white-text text-center'>
             We are a group of Full-Stack Web Developer and gym enthusiast, our goal is to contribute as much as possible with the our comunity to create the must useful tool any Gym , coach or athlete needs to succeed on their fitness journey.
-          </p>
+          </h4>
           <MDBRow>
             <MDBCol md="6" className="mb-md-0 mb-5">
               <img
                 tag="img"
                 src={anthonny}
-                className="rounded-circle z-depth-1 img-fluid"
+                className="rounded-circle z-depth-1 "
                 alt="Sample avatar"
               />
               <h4 className="font-weight-bold white-text my-4">
                 Anthonny Rodriguez
               </h4>
-              <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
+              <h4 className="text-uppercase white-text mb-3">Full-Stack Developer</h4>
               <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green" href="https://www.instagram.com/anthonnymitchell/"
                 target="blank">
                 <MDBIcon fab icon="instagram" />
@@ -154,13 +154,13 @@ function PublicRoute() {
               <img
                 tag="img"
                 src={images}
-                className="rounded-circle z-depth-1 img-fluid"
+                className="rounded-circle z-depth-1 "
                 alt="Sample avatar"
               />
               <h4 className="font-weight-bold white-text my-4">
                 Andrew Rodriguez
               </h4>
-              <h6 className="text-uppercase white-text mb-3">Full-Stack Developer</h6>
+              <h4 className="text-uppercase white-text mb-3">Full-Stack Developer</h4>
               <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-green" href="https://www.instagram.com/andrewmrb22/"
                 target="blank">
                 <MDBIcon fab icon="instagram" />
