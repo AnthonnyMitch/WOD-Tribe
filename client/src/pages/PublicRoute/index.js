@@ -52,7 +52,7 @@ function PublicRoute() {
         </MDBContainer>
       </MDBView>
      
-      <section className="my-5">
+      <section className="my-5" id="tribe">
         <h2 className="h1-responsive font-weight-bold text-center my-5 white-text">
           <strong>Explore The Tribe</strong>
         </h2>
@@ -184,7 +184,7 @@ function PublicRoute() {
         </MDBCardBody>
       </MDBRow>
       <hr className="my-5" />
-      <section className="my-5" >
+      <section className="my-5" id="contactform" >
         <h2 className="h1-responsive font-weight-bold my-5 white-text  text-center" >
           Contact Us
           </h2>

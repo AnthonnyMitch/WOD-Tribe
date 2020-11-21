@@ -123,7 +123,7 @@ function ProtectedRoute() {
 		const dailyC = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/dailycalory',
-			params: { heigth: formObject.height, age: formObject.age, gender: formObject.gender, weigth: formObject.weight },
+			params: { height: formObject.height, age: formObject.age, gender: formObject.gender, weigth: formObject.weight },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
@@ -182,15 +182,15 @@ function ProtectedRoute() {
 					className='d-flex justify-content-center align-items-center'
 					style={{ height: '100%', width: '100%', paddingTop: '17rem' }}
 				>
-					<MDBRow>
+					<MDBRow className="text-center">
 						<MDBCol md='12' className='mb-4 white-text text-center'>
-							<h1 className='h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
-								{user.username ? <span className="userText text-white ml-3 pt-1" to="#">Welcome  {user.username} !</span> : ""}
-							</h1>
+							<h3 className='h1-reponsive white-text  font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
+								{user.username ? <span className="userText text-white ml-3 pt-1" to="#"> <strong>Welcome  {user.username} !</strong></span> : ""}
+							</h3>
 							<hr className='hr-light my-4' />
 							<img
 								src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHaM3MUd1FvlIlAT-6MwVNtrB74al3gosgCCdLHpap3Gf3LDrcJ-flkYV89hb_sjJ3o5KywtYEVF_RjQKgIa894bN_irNLckPMnqX4Wkk&usqp=CAU&ec=45725302'
-								className='rounded-circle img-fluid'
+								className='rounded-circle img-fluid center'
 								alt=''
 							/>
 
