@@ -35,7 +35,7 @@ function ProtectedRoute() {
 	const [responseData, setResponseData] = useState({})
 	const [responseData2, setResponseData2] = useState({})
 	const [responseData3, setResponseData3] = useState({})
-	const [responseData4, setResponseData4] = useState({})
+	const [responseData4, setResponseData4] = useState({data: {}})
 	const [formObject, setFormObject] = useState({})
 	const [foodObject, setFoodObject] = useState({})
 	const [responseDataFood, setResponseDataFood] = useState({})
@@ -123,7 +123,7 @@ function ProtectedRoute() {
 		const dailyC = {
 			method: 'GET',
 			url: 'https://fitness-calculator.p.rapidapi.com/dailycalory',
-			params: { height: formObject.height, age: formObject.age, gender: formObject.gender, weigth: formObject.weight },
+			params: { heigth: formObject.height, age: formObject.age, gender: formObject.gender, weigth: formObject.weight },
 			headers: {
 				'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
 				'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com'
@@ -286,7 +286,7 @@ function ProtectedRoute() {
 										<label htmlFor="defaultFormRegisterPasswordEx" className="white-text" id="dailyCaloriesResult">
 											Daily Calories
         </label>
-										<output type="text" id="defaultFormRegisterPasswordEx" className="form-control">{JSON.stringify(responseData4.data)}</output>
+										<output type="text" id="defaultFormRegisterPasswordEx" className="form-control">{responseData4.data.BMR}</output>
 										<div className="text-center mt-4">
 											<MDBBtn color="green" type="clear" name="cancelCourse" value="cancel" >
 												Clear
