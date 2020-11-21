@@ -24,5 +24,36 @@ img{
   height: 400px;
 }
 #contactform{
-  margin:20px;
+  margin:70px;
 }
+
+#tribe{
+  margin: 70px;
+  border-top: 16px double #206300;
+  border-bottom: 16px double #206300;
+}
+
+#imageWod{
+  width: 800px;
+  height: 400px;
+}
+
+#imageCalories{
+  width: 800px;
+  height: 400px;
+}
+
+#imageCalculator{
+  width: 800px;
+  height: 400px;
+}
+
+#WodBorder{
+  border: 6px double #FFFFFF;
+}
+
+#team{
+  border-bottom: 16px double #206300;
+  margin: 70px;
+}
+

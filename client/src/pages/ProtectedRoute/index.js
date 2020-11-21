@@ -11,7 +11,7 @@ import {
 	MDBRow,
 	MDBCol,
 	MDBView,
-
+	MDBFooter,
 	MDBContainer,
 	MDBBtn
 
@@ -182,16 +182,17 @@ function ProtectedRoute() {
 					className='d-flex justify-content-center align-items-center'
 					style={{ height: '100%', width: '100%', paddingTop: '17rem' }}
 				>
-					<MDBRow className="text-center">
+					<MDBRow className="text-center" id="userface">
 						<MDBCol md='12' className='mb-4 white-text text-center'>
 							<h3 className='h1-reponsive white-text  font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
 								{user.username ? <span className="userText text-white ml-3 pt-1" to="#"> <strong>Welcome  {user.username} !</strong></span> : ""}
 							</h3>
 							<hr className='hr-light my-4' />
 							<img
-								src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHaM3MUd1FvlIlAT-6MwVNtrB74al3gosgCCdLHpap3Gf3LDrcJ-flkYV89hb_sjJ3o5KywtYEVF_RjQKgIa894bN_irNLckPMnqX4Wkk&usqp=CAU&ec=45725302'
+								src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MYuqGphvVWxQvfX7YuE25NjWM1dq2e_fSg&usqp=CAU'
 								className='rounded-circle img-fluid center'
 								alt=''
+								id="userimage"
 							/>
 
 
@@ -202,7 +203,7 @@ function ProtectedRoute() {
 			</MDBView>
 			<MDBContainer id='wod'>
 			<Container fluid >
-				<h1 className='white-text'>Workout of The Day</h1>
+				<h1 className='white-text text-center'> <strong>Workout of The Day</strong></h1>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -214,8 +215,8 @@ function ProtectedRoute() {
         </Row>
         <Row>
           <Col size="md-12">
-		  <Jumbotron>
-              <h1 id='wodDetails'> WOD Details</h1>
+		  <Jumbotron> 
+              <h1 id='wodDetails'> Details</h1>
               <p>
                 {workout.details}
               </p>
@@ -301,7 +302,7 @@ function ProtectedRoute() {
 				</section>
 			</MDBContainer>
 			<MDBContainer>
-				<section id="progress" className="text-center my-5">
+				<section id="progress" className="text-center my-5" id="nutrition">
 					<h2 className="h1-responsive font-weight-bold my-5 white-text">
 						Nutrition
         </h2>
@@ -368,6 +369,45 @@ function ProtectedRoute() {
 					</MDBContainer>
 				</section>
 			</MDBContainer>
+			<MDBFooter color="#" className="font-small darken-3 pt-0">
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="12" className="py-5">
+            <div className="mb-5 flex-center">
+              <a className="fb-ic">
+                <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="tw-ic">
+                <i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="gplus-ic">
+                <i className="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="li-ic">
+                <i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="ins-ic">
+                <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="pin-ic">
+                <i className="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+              </a>
+            </div>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href="">WOD Tribe Group Inc </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
 		</div>
 
 	);

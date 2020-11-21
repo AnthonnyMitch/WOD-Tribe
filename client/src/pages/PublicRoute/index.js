@@ -9,6 +9,7 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
+  MDBFooter,
   MDBCardTitle,
   MDBCardText,
   MDBCardImage,
@@ -63,12 +64,13 @@ function PublicRoute() {
         <MDBRow>
           <MDBCol lg="5" className="mb-lg-0 mb-5">
             <img
-              src="https://images.squarespace-cdn.com/content/v1/5a57e930f9a61ed005b80c45/1515713915152-TBG1NUV2DUAKR8VIC5M4/ke17ZwdGBToddI8pDm48kDS1ERbUEGbRuV0gI1MhqsAUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcTDMZdXjHNZqplaNSeVjrXHJclnzbXwJyYZyWxDXN4DBgGwjbkKGcQepkTI2TJ4nb/Crossfit-banner-1.jpg?format=2500w"
+              src="https://images.unsplash.com/photo-1597075958252-60fc09ec20c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzV8fGd5bSUyMGVxdWlwbWVudHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
+              id="imageWod"
               className="img-fluid rounded z-depth-1 text-center"
             />
           </MDBCol>
-          <MDBCol lg="7">
+          <MDBCol lg="7" id="WodBorder">
             <h3 >  <MDBIcon icon="dumbbell" />  Check The Workout of the Day</h3>
             <h4 className='white-text'>
             A written workout plan not only provides a layout for the day, but it also sets up the big picture for weeks or months to come. In other words, an established plan dictates the work that must be done in order to reach the goal.
@@ -77,15 +79,16 @@ function PublicRoute() {
         </MDBRow>
         <hr className="my-5" />
         <MDBRow>
-          <MDBCol lg="7">
+          <MDBCol lg="7" id="WodBorder">
             <h3>  <MDBIcon icon="utensils" />        Track your calories</h3>
             <h4  className='white-text'>
               Tracking your daily calories is a very important part of your fitness journey, that's why on this section you can track your breakfast, lunch and dinner calories just by typing its ingredients.</h4>
           </MDBCol>
           <MDBCol lg="5">
             <img
-              src="https://sipipa.com/blog/wp-content/uploads/2018/07/counting-calories-watching-what-you-eat.jpg"
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGhlYWx0aHklMjBmb29kfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60"
               alt=""
+              id="imageCalories"
               className="img-fluid rounded z-depth-1 text-center"
             />
           </MDBCol>
@@ -96,10 +99,11 @@ function PublicRoute() {
             <img
               src="https://www.setantacollege.com/wp-content/uploads/2017/02/performance_science_home.jpg"
               alt=""
+              id="imageCalculator"
               className="img-fluid rounded z-depth-1"
             />
           </MDBCol>
-          <MDBCol lg="7">
+          <MDBCol lg="7" id="WodBorder" >
             <h3>  <MDBIcon icon="calculator" />          Fitness Calculator</h3>
             <h4  className='white-text'>
              On this section, we offers a number of free tools to help you determine everything from your body mass index (BMI) to your body fat composition, daily caloric needs and more. Each of those tools will help you find an exercise program that fits your individual needs and goals, whether that be losing weight or increasing your strength with weight training.
@@ -111,7 +115,7 @@ function PublicRoute() {
 
 
 
-      <MDBRow className=" text-center">
+      <MDBRow className=" text-center" id="team">
         <MDBCardBody>
           <h2 className="h1-responsive font-weight-bold my-5  white-text">
             Our amazing team
@@ -231,7 +235,7 @@ function PublicRoute() {
                 <div className="md-form">
                   <MDBInput
                     icon="pencil-alt"
-                    label="Icon Prefix"
+                    label="Message"
                     iconClass="white-text"
                     type="textarea"
                     id="form-text"
@@ -240,6 +244,10 @@ function PublicRoute() {
                 <div className="text-center">
                   <MDBBtn color="green">Submit</MDBBtn>
                 </div>
+                
+
+
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -264,7 +272,7 @@ function PublicRoute() {
                 <MDBBtn tag="a" floating color="green" className="accent-1">
                   <MDBIcon icon="map-marker-alt" />
                 </MDBBtn>
-                <p>New York, 94126</p>
+                <p>Orlando, Florida, 32839</p>
                 <p className="mb-md-0">United States</p>
               </MDBCol>
               <MDBCol md="4">
@@ -278,13 +286,52 @@ function PublicRoute() {
                 <MDBBtn tag="a" floating color="green" className="accent-1">
                   <MDBIcon icon="envelope" />
                 </MDBBtn>
-                <p>info@gmail.com</p>
-                <p className="mb-md-0">sale@gmail.com</p>
+                <p>infoWODTRIBE@gmail.com</p>
+                <p className="mb-md-0">saleWODTRIBE@gmail.com</p>
               </MDBCol>
             </MDBRow>
           </MDBCol>
         </MDBRow>
       </section >
+      <MDBFooter color="#" className="font-small darken-3 pt-0">
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="12" className="py-5">
+            <div className="mb-5 flex-center">
+              <a className="fb-ic">
+                <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="tw-ic">
+                <i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="gplus-ic">
+                <i className="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="li-ic">
+                <i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="ins-ic">
+                <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="pin-ic">
+                <i className="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+              </a>
+            </div>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href="">WOD Tribe Group Inc </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
     </div>
   )
 }
