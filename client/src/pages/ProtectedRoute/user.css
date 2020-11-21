@@ -15,5 +15,13 @@
 margin: auto;
   }
 
+  #body{
+    border-top: 16px double #206300;
+
+  }
+
+  #nutrition{
+    border-top: 16px double #206300;
+  }
   
   

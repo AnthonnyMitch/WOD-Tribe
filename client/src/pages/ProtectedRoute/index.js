@@ -202,7 +202,7 @@ function ProtectedRoute() {
 			</MDBView>
 			<MDBContainer id='wod'>
 			<Container fluid >
-				<h1 className='white-text'>Workout of The Day</h1>
+				<h1 className='white-text text-center'> <strong>Workout of The Day</strong></h1>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -215,7 +215,7 @@ function ProtectedRoute() {
         <Row>
           <Col size="md-12">
 		  <Jumbotron>
-              <h1 id='wodDetails'> WOD Details</h1>
+              <h1 id='wodDetails'> Details</h1>
               <p>
                 {workout.details}
               </p>
@@ -301,7 +301,7 @@ function ProtectedRoute() {
 				</section>
 			</MDBContainer>
 			<MDBContainer>
-				<section id="progress" className="text-center my-5">
+				<section id="progress" className="text-center my-5" id="nutrition">
 					<h2 className="h1-responsive font-weight-bold my-5 white-text">
 						Nutrition
         </h2>
