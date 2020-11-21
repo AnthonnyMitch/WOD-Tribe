@@ -124,7 +124,7 @@ function PublicRoute() {
               <img
                 tag="img"
                 src={anthonny}
-                className="rounded-circle z-depth-1 img-fluid"
+                className="rounded-circle z-depth-1 "
                 alt="Sample avatar"
               />
               <h4 className="font-weight-bold white-text my-4">
@@ -154,7 +154,7 @@ function PublicRoute() {
               <img
                 tag="img"
                 src={images}
-                className="rounded-circle z-depth-1 img-fluid"
+                className="rounded-circle z-depth-1 "
                 alt="Sample avatar"
               />
               <h4 className="font-weight-bold white-text my-4">
