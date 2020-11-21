@@ -135,34 +135,34 @@ function ProtectedRoute() {
 			console.error(error);
 		});
 
-		//------------ Calorie Tracker-----------------------------------------------/////
+		// ------------ Calorie Tracker-----------------------------------------------/////
 
 
-		// function handleFoodChange(event) {
-		// 	const { name, value } = event.target;
-		// 	setFoodObject({ ...foodObject, [name]: value })
-		// }
+		function handleFoodChange(event) {
+			const { name, value } = event.target;
+			setFoodObject({ ...foodObject, [name]: value })
+		}
 
-		// function handleFoodSubmit(event) {
-		// 	event.preventDefault();
-		// 	console.log("foodValues" + JSON.stringify(foodObject))
+		function handleFoodSubmit(event) {
+			event.preventDefault();
+			console.log("foodValues" + JSON.stringify(foodObject))
 
-		// 	const calorieTracker = {
-		// 		method: 'GET',
-		// 		url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese',
-		// 		params: { fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat' },
-		// 		headers: {
-		// 			'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-		// 			'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
-		// 		}
-		// 	};
+			const calorieTracker = {
+				method: 'GET',
+				url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/' + params,
+				params: { fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat' },
+				headers: {
+					'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
+					'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
+				}
+			};
 
-		// 	axios.request(calorieTracker).then(function (response) {
-		// 		setResponseDataFood(response.data);
-		// 	}).catch(function (error) {
-		// 		console.error(error);
-		// 	});
-		// }
+			axios.request(calorieTracker).then(function (response) {
+				setResponseDataFood(response.data);
+			}).catch(function (error) {
+				console.error(error);
+			});
+		}
 
 
 
@@ -317,11 +317,11 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
-									<input type="text" id="defaultFormLoginEmailEx" className="form-control"  />
+									<input type="text" id="defaultFormLoginEmailEx" className="form-control" onChange={handleFoodChange} />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit" >Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit" onClick={handleFoodSubmit} >Calculate</MDBBtn>
 									</div>
 									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
@@ -335,11 +335,11 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
-									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<input type="email" id="defaultFormLoginEmailEx" className="form-control"onChange={handleFoodChange}/>
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit">Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit" onClick={handleFoodSubmit}>Calculate</MDBBtn>
 									</div>
 									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
@@ -353,11 +353,11 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
-									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<input type="email" id="defaultFormLoginEmailEx" className="form-control" onChange={handleFoodChange}/>
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit">Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit" onClick={handleFoodSubmit}>Calculate</MDBBtn>
 									</div>
 									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
