@@ -9,6 +9,7 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
+  MDBFooter,
   MDBCardTitle,
   MDBCardText,
   MDBCardImage,
@@ -234,7 +235,7 @@ function PublicRoute() {
                 <div className="md-form">
                   <MDBInput
                     icon="pencil-alt"
-                    label="Icon Prefix"
+                    label="Message"
                     iconClass="white-text"
                     type="textarea"
                     id="form-text"
@@ -243,6 +244,10 @@ function PublicRoute() {
                 <div className="text-center">
                   <MDBBtn color="green">Submit</MDBBtn>
                 </div>
+                
+
+
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -267,7 +272,7 @@ function PublicRoute() {
                 <MDBBtn tag="a" floating color="green" className="accent-1">
                   <MDBIcon icon="map-marker-alt" />
                 </MDBBtn>
-                <p>New York, 94126</p>
+                <p>Orlando, Florida, 32839</p>
                 <p className="mb-md-0">United States</p>
               </MDBCol>
               <MDBCol md="4">
@@ -281,13 +286,52 @@ function PublicRoute() {
                 <MDBBtn tag="a" floating color="green" className="accent-1">
                   <MDBIcon icon="envelope" />
                 </MDBBtn>
-                <p>info@gmail.com</p>
-                <p className="mb-md-0">sale@gmail.com</p>
+                <p>infoWODTRIBE@gmail.com</p>
+                <p className="mb-md-0">saleWODTRIBE@gmail.com</p>
               </MDBCol>
             </MDBRow>
           </MDBCol>
         </MDBRow>
       </section >
+      <MDBFooter color="#" className="font-small darken-3 pt-0">
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="12" className="py-5">
+            <div className="mb-5 flex-center">
+              <a className="fb-ic">
+                <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="tw-ic">
+                <i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="gplus-ic">
+                <i className="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="li-ic">
+                <i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="ins-ic">
+                <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
+                </i>
+              </a>
+              <a className="pin-ic">
+                <i className="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+              </a>
+            </div>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href="">WOD Tribe Group Inc </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
     </div>
   )
 }
