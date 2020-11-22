@@ -26,7 +26,7 @@ function ProtectedRoute() {
 
 	// When this component mounts, grab the workout with the _id of props.match.params.id
 	// e.g. localhost:3000/workouts/599dcb67f0f16317844583fc
-	
+
 
 	//-------user api ----------------------///
 	const [user, dispatch] = useContext(UserContext)
@@ -35,7 +35,7 @@ function ProtectedRoute() {
 	const [responseData, setResponseData] = useState({})
 	const [responseData2, setResponseData2] = useState({})
 	const [responseData3, setResponseData3] = useState({})
-	const [responseData4, setResponseData4] = useState({data: {}})
+	const [responseData4, setResponseData4] = useState({ data: {} })
 	const [formObject, setFormObject] = useState({})
 	const [foodObject, setFoodObject] = useState({})
 	const [responseDataFood, setResponseDataFood] = useState({})
@@ -67,7 +67,7 @@ function ProtectedRoute() {
 	// create a new function get WOD. get the last WOD created.
 
 	//-----------Fitness Calculator ----------------------///
-	 
+
 	function handleChange(event) {
 		const { name, value } = event.target;
 		setFormObject({ ...formObject, [name]: value })
@@ -134,45 +134,44 @@ function ProtectedRoute() {
 		}).catch(function (error) {
 			console.error(error);
 		});
+	}
+	// ------------ Calorie Tracker-----------------------------------------------/////
+	const [query, setQuery] = useState("");
+	const [recipes, setRecipes] = useState([]);
 
-		//------------ Calorie Tracker-----------------------------------------------/////
+	const APP_ID = "fbc89f8b";
+	const APP_KEY = "ade471b90d06bc25139c8df9ae48aa60	";
 
+	const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-		// function handleFoodChange(event) {
-		// 	const { name, value } = event.target;
-		// 	setFoodObject({ ...foodObject, [name]: value })
-		// }
+	const getData = async () => {
 
-		// function handleFoodSubmit(event) {
-		// 	event.preventDefault();
-		// 	console.log("foodValues" + JSON.stringify(foodObject))
+		const result = await axios.get(url);
 
-		// 	const calorieTracker = {
-		// 		method: 'GET',
-		// 		url: 'https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese',
-		// 		params: { fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat' },
-		// 		headers: {
-		// 			'x-rapidapi-key': '515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83',
-		// 			'x-rapidapi-host': 'nutritionix-api.p.rapidapi.com'
-		// 		}
-		// 	};
-
-		// 	axios.request(calorieTracker).then(function (response) {
-		// 		setResponseDataFood(response.data);
-		// 	}).catch(function (error) {
-		// 		console.error(error);
-		// 	});
-		// }
-
-
-
-
-
-
-
-
+		console.log(result);
+		setRecipes(result.data.hits);
+		setQuery("");
 
 	}
+
+
+	const onChange = e => setQuery(e.target.value);
+
+	const onSubmit = e => {
+		e.preventDefault();
+		getData();
+	};
+
+
+
+
+
+
+
+
+
+
+
 	return (
 
 		<div id='user' className="black-skin">
@@ -202,29 +201,29 @@ function ProtectedRoute() {
 				</MDBContainer>
 			</MDBView>
 			<MDBContainer id='wod'>
-			<Container fluid >
-				<h1 className='white-text text-center'> <strong>Workout of The Day</strong></h1>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {workout.muscle} with {workout.weight}
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-		  <Jumbotron> 
-              <h1 id='wodDetails'> Details</h1>
-              <p>
-                {workout.details}
-              </p>
-			  </Jumbotron>
-          </Col>
-        </Row>
-      </Container>
-			
+				<Container fluid >
+					<h1 className='white-text text-center'> <strong>Workout of The Day</strong></h1>
+					<Row>
+						<Col size="md-12">
+							<Jumbotron>
+								<h1>
+									{workout.muscle} with {workout.weight}
+								</h1>
+							</Jumbotron>
+						</Col>
+					</Row>
+					<Row>
+						<Col size="md-12">
+							<Jumbotron>
+								<h1 id='wodDetails'> Details</h1>
+								<p>
+									{workout.details}
+								</p>
+							</Jumbotron>
+						</Col>
+					</Row>
+				</Container>
+
 
 			</MDBContainer>
 			<MDBContainer>
@@ -312,48 +311,55 @@ function ProtectedRoute() {
 					<MDBContainer>
 						<MDBRow>
 							<MDBCol size="4">
-								<form>
+								<form onSubmit={onSubmit}>
 									<p className="h4 text-center mb-4 white-text">Breakfast</p>
 									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
-									<input type="text" id="defaultFormLoginEmailEx" className="form-control"  />
+									<input type="text" id="defaultFormLoginEmailEx" className="form-control" name="query" onChange={onChange}
+										value={query} />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit" >Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit"  >Calculate</MDBBtn>
 									</div>
 									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
         </label>
-									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
+									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" >{recipes !== [] &&
+         											 recipes.map(recipe => <h5>{recipe.recipe.calories}</h5>)}</output>
 								</form>
 							</MDBCol>
 							<MDBCol size="4">
-								<form>
+								<form onSubmit={onSubmit}  >
 									<p className="h4 text-center mb-4 white-text">Lunch</p>
 									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
-									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<input  className="form-control" name="query" onChange={onChange}
+										value={query} />
 									<br />
 
 									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit">Calculate</MDBBtn>
+										<MDBBtn color="green" type="submit"  >Calculate</MDBBtn>
 									</div>
 									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
         </label>
-									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
+									<output type="text" id="defaultFormLoginPasswordEx" className="form-control">
+									{recipes !== [] &&
+         											 recipes.map(recipe => <h5>{recipe.recipe.calories}</h5>)}
+									</output>
 								</form>
 							</MDBCol>
 							<MDBCol size="4">
-								<form>
+								<form onSubmit={onSubmit}>
 									<p className="h4 text-center mb-4 white-text">Dinner</p>
 									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
 										Food
         </label>
-									<input type="email" id="defaultFormLoginEmailEx" className="form-control" />
+									<input type="text" className="form-control"name="query" onChange={onChange}
+										value={query} />
 									<br />
 
 									<div className="text-center mt-4">
@@ -362,7 +368,8 @@ function ProtectedRoute() {
 									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
 										Total
         </label>
-									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" ></output>
+									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" >{recipes !== [] &&
+         											 recipes.map(recipe => <h5>{recipe.recipe.calories}</h5>)}</output>
 								</form>
 							</MDBCol>
 						</MDBRow>
@@ -370,44 +377,44 @@ function ProtectedRoute() {
 				</section>
 			</MDBContainer>
 			<MDBFooter color="#" className="font-small darken-3 pt-0">
-      <MDBContainer>
-        <MDBRow>
-          <MDBCol md="12" className="py-5">
-            <div className="mb-5 flex-center">
-              <a className="fb-ic">
-                <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-              </a>
-              <a className="tw-ic">
-                <i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-              </a>
-              <a className="gplus-ic">
-                <i className="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-              </a>
-              <a className="li-ic">
-                <i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-              </a>
-              <a className="ins-ic">
-                <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-              </a>
-              <a className="pin-ic">
-                <i className="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-              </a>
-            </div>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="">WOD Tribe Group Inc </a>
-        </MDBContainer>
-      </div>
-    </MDBFooter>
+				<MDBContainer>
+					<MDBRow>
+						<MDBCol md="12" className="py-5">
+							<div className="mb-5 flex-center">
+								<a className="fb-ic">
+									<i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
+									</i>
+								</a>
+								<a className="tw-ic">
+									<i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+									</i>
+								</a>
+								<a className="gplus-ic">
+									<i className="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x">
+									</i>
+								</a>
+								<a className="li-ic">
+									<i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
+									</i>
+								</a>
+								<a className="ins-ic">
+									<i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
+									</i>
+								</a>
+								<a className="pin-ic">
+									<i className="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+								</a>
+							</div>
+						</MDBCol>
+					</MDBRow>
+				</MDBContainer>
+				<div className="footer-copyright text-center py-3">
+					<MDBContainer fluid>
+						&copy; {new Date().getFullYear()} Copyright:{" "}
+						<a href="">WOD Tribe Group Inc </a>
+					</MDBContainer>
+				</div>
+			</MDBFooter>
 		</div>
 
 	);
