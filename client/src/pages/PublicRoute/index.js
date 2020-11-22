@@ -64,29 +64,41 @@ function PublicRoute() {
         <MDBRow>
           <MDBCol lg="5" className="mb-lg-0 mb-5">
             <img
-              src="https://images.unsplash.com/photo-1597075958252-60fc09ec20c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzV8fGd5bSUyMGVxdWlwbWVudHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fGZpdG5lc3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
               id="imageWod"
               className="img-fluid rounded z-depth-1 text-center"
             />
           </MDBCol>
           <MDBCol lg="7" id="WodBorder">
-            <h3 >  <MDBIcon icon="dumbbell" />  Check The Workout of the Day</h3>
+            <h3 >  <MDBIcon icon="dumbbell" />  Check The WOD</h3>
             <h4 className='white-text'>
-            A written workout plan not only provides a layout for the day, but it also sets up the big picture for weeks or months to come. In other words, an established plan dictates the work that must be done in order to reach the goal.
+            A written workout plan not only provides a layout for the day, but it also sets up the big picture for weeks or months to come. In other words, an established plan dictates the work that must be done in order to reach the goal. How does it work :
+
+            <ul>- Register or Login to acess to your userpage  </ul>
+            <ul>- Scroll down to the WOD section</ul>
+            <ul>- The WOD will show you the muscle or workout your are going to do today and the deatails of such workout.</ul>
+            <ul>- Note: This workouts are design by your personal trainer</ul>
+
          </h4>
           </MDBCol>
         </MDBRow>
         <hr className="my-5" />
         <MDBRow>
           <MDBCol lg="7" id="WodBorder">
-            <h3>  <MDBIcon icon="utensils" />        Track your calories</h3>
+            <h3>  <MDBIcon icon="utensils" />        Recipes</h3>
             <h4  className='white-text'>
-              Tracking your daily calories is a very important part of your fitness journey, that's why on this section you can track your breakfast, lunch and dinner calories just by typing its ingredients.</h4>
+              We know at The Tribe that one of the most difficult parts of starting a healthy life is nutrition. Specially when it comes to cooking healthy recipes. For this reason, we design this section just for that. In this section of the app Athletes are going to be able to search for a food item that they want to eat, and the app will suggest 10 different recipes that they can choose. How does it work:
+              <ul>- Type a food item in the search bar, for example Steak or Chicken</ul>
+              <ul>- Then you will see 10 different recipes </ul>
+              <ul>- Each recipe will have a detail button that will show ingridients, and calories</ul>
+              <ul>-Also each recipe pictures is a button that if use will take you to another page where you will see step by step how to prepare the recipe</ul>
+              
+              </h4>
           </MDBCol>
           <MDBCol lg="5">
             <img
-              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGhlYWx0aHklMjBmb29kfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60"
+              src="https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fHJlY2lwZXMlMjBib29rc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
               id="imageCalories"
               className="img-fluid rounded z-depth-1 text-center"
@@ -97,7 +109,7 @@ function PublicRoute() {
         <MDBRow>
           <MDBCol lg="5" className="mb-lg-0 mb-5">
             <img
-              src="https://www.setantacollege.com/wp-content/uploads/2017/02/performance_science_home.jpg"
+              src="https://images.unsplash.com/photo-1563053764-149651f44800?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fG11c2NsZSUyMG1hbnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
               id="imageCalculator"
               className="img-fluid rounded z-depth-1"
@@ -106,7 +118,13 @@ function PublicRoute() {
           <MDBCol lg="7" id="WodBorder" >
             <h3>  <MDBIcon icon="calculator" />          Fitness Calculator</h3>
             <h4  className='white-text'>
-             On this section, we offers a number of free tools to help you determine everything from your body mass index (BMI) to your body fat composition, daily caloric needs and more. Each of those tools will help you find an exercise program that fits your individual needs and goals, whether that be losing weight or increasing your strength with weight training.
+             On this section, we offers a number of free tools to help you determine everything from your body mass index (BMI) to your body fat composition, daily caloric needs and more. Each of those tools will help you find an exercise program that fits your individual needs and goals, whether that be losing weight or increasing your strength with weight training.How to use:
+           
+            <ul>-Insert all the personal information Age, Gender, Weight,and Height.</ul>
+            <ul>-Hit the Calculate Button at the end of the form.</ul>
+            <ul>- See your result : BMI, Body Fat, Ideal Weight, and suggested Daily Calories.</ul>
+              
+             
            </h4>
           </MDBCol>
         </MDBRow>
