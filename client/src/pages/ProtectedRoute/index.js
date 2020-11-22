@@ -327,7 +327,7 @@ function ProtectedRoute() {
 										Total
         </label>
 									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" >{recipes !== [] &&
-         											 recipes.map(recipe => <h5>{recipe.recipe.calories}</h5>)}</output>
+         											 recipes.map(recipe => <h5>{recipe.recipe.label}</h5>)}</output>
 								</form>
 							</MDBCol>
 							<MDBCol size="4">
@@ -348,7 +348,7 @@ function ProtectedRoute() {
         </label>
 									<output type="text" id="defaultFormLoginPasswordEx" className="form-control">
 									{recipes !== [] &&
-         											 recipes.map(recipe => <h5>{recipe.recipe.calories}</h5>)}
+         											 recipes.map(recipe => <h5>{recipe.recipe.totalTime}</h5>)}
 									</output>
 								</form>
 							</MDBCol>
