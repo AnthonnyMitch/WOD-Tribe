@@ -5,9 +5,9 @@ import { useParams } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-import Recipe from "./components/Recipe";
+import Recipe from "../../components/Recipes/Recipe";
 import { v4 as uuidv4 } from "uuid";
-import Alert from "./components/Alert";
+import Alert from "../../components/Recipes/Alert";
 import {
 
 	MDBMask,
@@ -150,7 +150,7 @@ function ProtectedRoute() {
 
 	const getData = async () => {
 		if (query !== "") {
-			const result = await Axios.get(url);
+			const result = await axios.get(url);
 			if (!result.data.more) {
 				return setAlert("No food with such name");
 			}
@@ -315,7 +315,7 @@ function ProtectedRoute() {
         </p>
 					<MDBContainer>
 						<MDBRow>
-							<h1>Food Searching App</h1>
+							<h1 id="food">Food Searching App</h1>
 							<form onSubmit={onSubmit} className="search-form">
 								{alert !== "" && <Alert alert={alert} />}
 								<input
