@@ -67,7 +67,7 @@ function Workouts() {
               <Input
                 onChange={handleInputChange}
                 name="muscle"
-                placeholder="Muscle (required)"
+                placeholder="Main Movement (required)"
               />
               <Input
                 onChange={handleInputChange}
@@ -110,7 +110,7 @@ function Workouts() {
           </Col>
         </Row>
       </Container>
-      <MDBFooter color="#" className="font-small darken-3 pt-0">
+      <MDBFooter color="green" className="font-small darken-3 pt-0">
       <MDBContainer>
         <MDBRow>
           <MDBCol md="12" className="py-5">

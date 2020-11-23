@@ -86,19 +86,20 @@ function PublicRoute() {
         <hr className="my-5" />
         <MDBRow>
           <MDBCol lg="7" id="WodBorder">
-            <h3>  <MDBIcon icon="utensils" />        Recipes</h3>
+            <h3>  <MDBIcon icon="utensils" />        Fitness Calculator</h3>
             <h4  className='white-text'>
-              We know at The Tribe that one of the most difficult parts of starting a healthy life is nutrition. Specially when it comes to cooking healthy recipes. For this reason, we design this section just for that. In this section of the app Athletes are going to be able to search for a food item that they want to eat, and the app will suggest 10 different recipes that they can choose. How does it work:
-              <ul>- Type a food item in the search bar, for example Steak or Chicken</ul>
-              <ul>- Then you will see 10 different recipes </ul>
-              <ul>- Each recipe will have a detail button that will show ingridients, and calories</ul>
-              <ul>-Also each recipe pictures is a button that if use will take you to another page where you will see step by step how to prepare the recipe</ul>
+            On this section, we offers a number of free tools to help you determine everything from your body mass index (BMI) to your body fat composition, daily caloric needs and more. Each of those tools will help you find an exercise program that fits your individual needs and goals, whether that be losing weight or increasing your strength with weight training.How to use:
+           
+           <ul>-Insert all the personal information Age, Gender, Weight,and Height.</ul>
+           <ul>-Hit the Calculate Button at the end of the form.</ul>
+           <ul>- See your result : BMI, Body Fat, Ideal Weight, and suggested Daily Calories.</ul>
+             
               
               </h4>
           </MDBCol>
           <MDBCol lg="5">
             <img
-              src="https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fHJlY2lwZXMlMjBib29rc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              src="https://images.unsplash.com/photo-1563053764-149651f44800?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fG11c2NsZSUyMG1hbnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
               id="imageCalories"
               className="img-fluid rounded z-depth-1 text-center"
@@ -109,20 +110,21 @@ function PublicRoute() {
         <MDBRow>
           <MDBCol lg="5" className="mb-lg-0 mb-5">
             <img
-              src="https://images.unsplash.com/photo-1563053764-149651f44800?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fG11c2NsZSUyMG1hbnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              src="https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fHJlY2lwZXMlMjBib29rc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
               id="imageCalculator"
               className="img-fluid rounded z-depth-1"
             />
           </MDBCol>
           <MDBCol lg="7" id="WodBorder" >
-            <h3>  <MDBIcon icon="calculator" />          Fitness Calculator</h3>
+            <h3>  <MDBIcon icon="calculator" />      Recipes    </h3>
             <h4  className='white-text'>
-             On this section, we offers a number of free tools to help you determine everything from your body mass index (BMI) to your body fat composition, daily caloric needs and more. Each of those tools will help you find an exercise program that fits your individual needs and goals, whether that be losing weight or increasing your strength with weight training.How to use:
-           
-            <ul>-Insert all the personal information Age, Gender, Weight,and Height.</ul>
-            <ul>-Hit the Calculate Button at the end of the form.</ul>
-            <ul>- See your result : BMI, Body Fat, Ideal Weight, and suggested Daily Calories.</ul>
+            We know at The Tribe that one of the most difficult parts of starting a healthy life is nutrition. Specially when it comes to cooking healthy recipes. For this reason, we design this section just for that. In this section of the app Athletes are going to be able to search for a food item that they want to eat, and the app will suggest 10 different recipes that they can choose. How does it work:
+              <ul>- Type a food item in the search bar, for example Steak or Chicken</ul>
+              <ul>- Then you will see 10 different recipes </ul>
+              <ul>- Each recipe will have a detail button that will show ingridients, and calories</ul>
+              <ul>-Also each recipe pictures is a button that if use will take you to another page where you will see step by step how to prepare the recipe</ul>
+            
               
              
            </h4>
@@ -311,7 +313,7 @@ function PublicRoute() {
           </MDBCol>
         </MDBRow>
       </section >
-      <MDBFooter color="#" className="font-small darken-3 pt-0">
+      <MDBFooter color="green" className="font-small darken-3 pt-0">
       <MDBContainer>
         <MDBRow>
           <MDBCol md="12" className="py-5">

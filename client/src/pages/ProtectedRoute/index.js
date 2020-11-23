@@ -8,6 +8,8 @@ import API from "../../utils/API";
 import Recipe from "../../components/Recipes/Recipe";
 import { v4 as uuidv4 } from "uuid";
 import Alert from "../../components/Recipes/Alert";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import {
 
 	MDBMask,
@@ -188,16 +190,16 @@ function ProtectedRoute() {
 				>
 					<MDBRow className="text-center" id="userface">
 						<MDBCol md='12' className='mb-4 white-text text-center'>
-							<h3 className='h1-reponsive white-text  font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
+							<h1 className='h1-reponsive white-text  font-weight-bold mb-0 pt-md-5 pt-5 text-center'>
 								{user.username ? <span className="userText text-white ml-3 pt-1" to="#"> <strong>Welcome  {user.username} !</strong></span> : ""}
-							</h3>
+							</h1>
 							<hr className='hr-light my-4' />
-							<img
+							{/* <img
 								src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MYuqGphvVWxQvfX7YuE25NjWM1dq2e_fSg&usqp=CAU'
 								className='rounded-circle img-fluid center'
 								alt=''
 								id="userimage"
-							/>
+							/> */}
 
 
 
@@ -208,25 +210,41 @@ function ProtectedRoute() {
 			<MDBContainer id='wod'>
 				<Container fluid >
 					<h1 className='white-text text-center'> <strong>Workout of The Day</strong></h1>
-					<Row>
-						<Col size="md-12">
-							<Jumbotron>
-								<h3>
-									{workout.muscle} with {workout.weight}
-								</h3>
-							</Jumbotron>
-						</Col>
-					</Row>
-					<Row>
-						<Col size="md-12">
-							<Jumbotron>
-								<h3 id='wodDetails'> Details</h3>
-								<p>
-									{workout.details}
-								</p>
-							</Jumbotron>
-						</Col>
-					</Row>
+					<div id="mando" className="item-center" >
+					
+							<Card className="text-center card" >
+								<Card.Header>WOD</Card.Header>
+								<Card.Body>
+									<Card.Title>Mando with 120lbs</Card.Title>
+									<Card.Text>
+									<p>Mando (TimeCap 20 min)</p>	
+									<p>	21 BackSquat 
+										21 Burpees
+										21 SitUps
+									</p>
+									<p>	15 BackSquat 
+										15 Burpees
+										15 SitUps
+									</p>
+									<p>	9 BackSquat 
+										9 Burpees
+										9 SitUps</p>
+										<p>	6 BackSquat 
+										6 Burpees
+										6 SitUps</p>
+										<p>	3 BackSquat 
+										3 Burpees
+										3 SitUps</p>
+									
+									
+    </Card.Text>
+									<Button variant="success">Save Score</Button>
+								</Card.Body>
+								
+							</Card>
+						
+					</div>
+					
 				</Container>
 
 
@@ -234,11 +252,11 @@ function ProtectedRoute() {
 			<MDBContainer>
 				<section id="body" className="text-center my-5">
 					<h2 className="h1-responsive font-weight-bold my-5 white-text">
-						Body
+						Fitness Calculator
         </h2>
-					<p className="lead grey-text w-responsive mx-auto mb-5 white-text">
+					<h4 className="lead grey-text w-responsive mx-auto mb-5 white-text">
 						On this section, you would be able to check your BMI, body fat, ideal weight and the neccessarie daily calories your body needs.
-        </p>
+        </h4>
 					<MDBRow>
 						<MDBCol >
 							<MDBContainer>
@@ -308,11 +326,11 @@ function ProtectedRoute() {
 			<MDBContainer>
 				<section id="progress" className="text-center my-5" id="nutrition">
 					<h2 className="h1-responsive font-weight-bold my-5 white-text">
-						Nutrition
+						Recipes
         </h2>
-					<p className="lead white-text w-responsive mx-auto mb-5">
-						On this section, the Athlete would be able to track their daily calories
-        </p>
+					<h4 className="lead white-text w-responsive mx-auto mb-5">
+						On this section, the Athlete would be able to find Recipes to help them improve their diet by juts typing ingredients.
+        </h4>
 					<MDBContainer>
 						<MDBRow>
 
@@ -336,7 +354,7 @@ function ProtectedRoute() {
 					</MDBContainer>
 				</section>
 			</MDBContainer>
-			<MDBFooter color="#" className="font-small darken-3 pt-0">
+			<MDBFooter color="green" className="font-small darken-3 pt-0">
 				<MDBContainer>
 					<MDBRow>
 						<MDBCol md="12" className="py-5">
