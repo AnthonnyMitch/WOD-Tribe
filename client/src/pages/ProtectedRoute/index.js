@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import Recipe from "../../components/Recipes/Recipe";
+import { v4 as uuidv4 } from "uuid";
+import Alert from "../../components/Recipes/Alert";
 import {
 
 	MDBMask,
@@ -138,6 +141,7 @@ function ProtectedRoute() {
 	// ------------ Calorie Tracker-----------------------------------------------/////
 	const [query, setQuery] = useState("");
 	const [recipes, setRecipes] = useState([]);
+	const [alert, setAlert] = useState("");
 
 	const APP_ID = "fbc89f8b";
 	const APP_KEY = "ade471b90d06bc25139c8df9ae48aa60	";
@@ -145,15 +149,19 @@ function ProtectedRoute() {
 	const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
 	const getData = async () => {
-
-		const result = await axios.get(url);
-
-		console.log(result);
-		setRecipes(result.data.hits);
-		setQuery("");
-
-	}
-
+		if (query !== "") {
+			const result = await axios.get(url);
+			if (!result.data.more) {
+				return setAlert("No food with such name");
+			}
+			console.log(result);
+			setRecipes(result.data.hits);
+			setQuery("");
+			setAlert("");
+		} else {
+			setAlert("Please fill the form");
+		}
+	};
 
 	const onChange = e => setQuery(e.target.value);
 
@@ -161,9 +169,6 @@ function ProtectedRoute() {
 		e.preventDefault();
 		getData();
 	};
-
-
-
 
 
 
@@ -310,68 +315,23 @@ function ProtectedRoute() {
         </p>
 					<MDBContainer>
 						<MDBRow>
-							<MDBCol size="4">
-								<form onSubmit={onSubmit}>
-									<p className="h4 text-center mb-4 white-text">Breakfast</p>
-									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
-										Food
-        </label>
-									<input type="text" id="defaultFormLoginEmailEx" className="form-control" name="query" onChange={onChange}
-										value={query} />
-									<br />
-
-									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit"  >Calculate</MDBBtn>
-									</div>
-									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
-										Total
-        </label>
-									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" >{recipes !== [] &&
-         											 recipes.map(recipe => <h5>{recipe.recipe.label}</h5>)}</output>
-								</form>
-							</MDBCol>
-							<MDBCol size="4">
-								<form onSubmit={onSubmit}  >
-									<p className="h4 text-center mb-4 white-text">Lunch</p>
-									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
-										Food
-        </label>
-									<input  className="form-control" name="query" onChange={onChange}
-										value={query} />
-									<br />
-
-									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit"  >Calculate</MDBBtn>
-									</div>
-									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
-										Total
-        </label>
-									<output type="text" id="defaultFormLoginPasswordEx" className="form-control">
-									{recipes !== [] &&
-         											 recipes.map(recipe => <h5>{recipe.recipe.totalTime}</h5>)}
-									</output>
-								</form>
-							</MDBCol>
-							<MDBCol size="4">
-								<form onSubmit={onSubmit}>
-									<p className="h4 text-center mb-4 white-text">Dinner</p>
-									<label htmlFor="defaultFormLoginEmailEx" className="white-text">
-										Food
-        </label>
-									<input type="text" className="form-control"name="query" onChange={onChange}
-										value={query} />
-									<br />
-
-									<div className="text-center mt-4">
-										<MDBBtn color="green" type="submit">Calculate</MDBBtn>
-									</div>
-									<label htmlFor="defaultFormLoginPasswordEx" className="white-text">
-										Total
-        </label>
-									<output type="text" id="defaultFormLoginPasswordEx" className="form-control" >{recipes !== [] &&
-         											 recipes.map(recipe => <h5>{recipe.recipe.calories}</h5>)}</output>
-								</form>
-							</MDBCol>
+							<h1 id="food">Food Searching App</h1>
+							<form onSubmit={onSubmit} className="search-form">
+								{alert !== "" && <Alert alert={alert} />}
+								<input
+									type="text"
+									name="query"
+									onChange={onChange}
+									value={query}
+									autoComplete="off"
+									placeholder="Search Food"
+								/>
+								<input type="submit" value="Search" />
+							</form>
+							<div className="recipes">
+								{recipes !== [] &&
+									recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe} />)}
+							</div>
 						</MDBRow>
 					</MDBContainer>
 				</section>
