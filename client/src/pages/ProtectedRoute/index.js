@@ -215,7 +215,7 @@ function ProtectedRoute() {
 							<Card className="text-center card" >
 								<Card.Header>WOD</Card.Header>
 								<Card.Body>
-									<Card.Title>Mando with 120lbs</Card.Title>
+									<Card.Title>BackSquat with 120lbs</Card.Title>
 									<Card.Text>
 									<p>Mando (TimeCap 20 min)</p>	
 									<p>	21 BackSquat 
