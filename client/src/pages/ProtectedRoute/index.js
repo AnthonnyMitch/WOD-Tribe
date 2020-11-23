@@ -211,16 +211,16 @@ function ProtectedRoute() {
 					<Row>
 						<Col size="md-12">
 							<Jumbotron>
-								<h1>
+								<h3>
 									{workout.muscle} with {workout.weight}
-								</h1>
+								</h3>
 							</Jumbotron>
 						</Col>
 					</Row>
 					<Row>
 						<Col size="md-12">
 							<Jumbotron>
-								<h1 id='wodDetails'> Details</h1>
+								<h3 id='wodDetails'> Details</h3>
 								<p>
 									{workout.details}
 								</p>
@@ -315,7 +315,7 @@ function ProtectedRoute() {
         </p>
 					<MDBContainer>
 						<MDBRow>
-							<h1 id="food">Food Searching App</h1>
+
 							<form onSubmit={onSubmit} className="search-form">
 								{alert !== "" && <Alert alert={alert} />}
 								<input
