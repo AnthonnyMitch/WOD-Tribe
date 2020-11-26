@@ -41,7 +41,8 @@ style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
               </h2>
               <hr className='hr-light' />
               <h6 className='mb-4'>
-              Wod Tribe exists for one reason, and that is to constantly challenge and lead our members to achieve the highest level of sustainable fitness you can reach..
+              Wod Tribe exists for one reason, and that is to constantly challenge and lead our members to achieve the highest level of sustainable fitness you can reach.
+              THIS IS THE WAY.
               </h6>
               
             </MDBAnimation>

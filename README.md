@@ -40,7 +40,20 @@ Node.js
   3 The second section is the Fitness Calculator that allows Athletes to see their BMI, Body Fat, Ideal Weight, and Daily calories by submiting age,gender,weight and height. 
   4 The last section of the page is the recipe generator that will help athletes to tyoe any food item and the generator will display 10 healthy recipes.
   5 For gym owner or personal trainer we design a secret path where they will be able to create the WOD.
-  
+
+
+  ## App Walkthrough
+  ![alt text](client\src\images\coach.png)
+![alt text](client\src\images\intro.png) 
+![alt text](client\src\images\wod1.png)
+![alt text](client\src\images\tools.png)
+![alt text](client\src\images\register.png)
+![alt text](client\src\images\login.png)
+![alt text](client\src\images\user.png)
+![alt text](client\src\images\wod2.png)
+![alt text](client\src\images\fitness.png)
+![alt text](client\src\images\recipe.png)
+
   ## Credits
   
 Antdrew Rodriguez https://github.com/andrewrb22
