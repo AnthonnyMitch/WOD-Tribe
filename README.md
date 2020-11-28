@@ -36,10 +36,15 @@ Robo3t
  Instructions and examples for use:
  
   1 As an Athlete you must register first or login if you are alredy register.
+  
   2 Once the athlete access the userpage he or she will see the WOD in the first section of the page 
-  3 The second section is the Fitness Calculator that allows Athletes to see their BMI, Body Fat, Ideal Weight, and Daily calories by submiting age,gender,weight and height. 
+  
+  3 The second section is the Fitness Calculator that allows Athletes to see their BMI, Body Fat, Ideal Weight, and Daily calories by submiting age,gender,weight and height.
+  
   4 The last section of the page is the recipe generator that will help athletes to tyoe any food item and the generator will display 10 healthy recipes.
+  
   5 For gym owner or personal trainer we design a secret path where they will be able to create the WOD.
+  
 
 
   ## App Walkthrough
