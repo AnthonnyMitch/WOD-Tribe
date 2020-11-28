@@ -7,11 +7,11 @@
   
   ## Technologies use:
 React.js
-Passport.js
+Third party APIs
+Express
 MDB react
 Mongodb
 Robo3t
-Node.js
   
   
   ## Table of Contents :
@@ -43,16 +43,16 @@ Node.js
 
 
   ## App Walkthrough
-  ![alt text](client\src\images\coach.png)
-![alt text](client\src\images\intro.png) 
-![alt text](client\src\images\wod1.png)
-![alt text](client\src\images\tools.png)
-![alt text](client\src\images\register.png)
-![alt text](client\src\images\login.png)
-![alt text](client\src\images\user.png)
-![alt text](client\src\images\wod2.png)
-![alt text](client\src\images\fitness.png)
-![alt text](client\src\images\recipe.png)
+  ![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/intro.png) 
+  ![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/coach.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/wod1.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/tools.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/register.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/login.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/user.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/wod2.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/fitness.png)
+![alt text](https://github.com/AnthonnyMitch/WOD-Tribe/blob/main/client/src/images/recipe.png)
 
   ## Credits
   
